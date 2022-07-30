@@ -7,8 +7,8 @@ img {
 
 .main{
     display:grid;
-    grid-template-columns: 1fr 2fr;
-    background-color: rgb(202, 186, 168);
+    grid-template-columns: 1fr 2fr;   
+    background-image: linear-gradient(60deg,rgb(202, 186, 168), rgb(172, 172, 73));
     border-radius: 10px;
     grid-template-columns: 1f 2fr;
     overflow: hidden;
@@ -16,7 +16,7 @@ img {
 .rent{
     display:grid;
     grid-template-columns: 1fr 2fr;
-    background-color: rgb(177, 125, 67);
+    background-image: linear-gradient(60deg,rgb(157, 173, 75), rgb(133, 165, 82));
     border-radius: 10px;
     grid-template-columns: 1f 2fr;
     overflow: hidden;
@@ -64,5 +64,7 @@ mat-icon{
 
 button{
     margin-top: 1rem;
-    margin-left: 16rem;
+    margin-inline-start: 20rem;  
+    --bs-btn-padding-y: 1rem; 
+    --bs-btn-padding-x: 2rem; 
 }
