@@ -7,18 +7,27 @@ import { AppComponent } from './app.component';
 import { PropertyListComponent } from './Properties/property-list/property-list/property-list.component';
 import { NavComponent } from './nav/nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatIconModule} from '@angular/material/icon';
+import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component'
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertyListComponent,
-    NavComponent
+    NavComponent,
+    PropertyCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatIconModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,68 @@
+img {
+    float: left;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.main{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: rgb(202, 186, 168);
+    border-radius: 10px;
+    grid-template-columns: 1f 2fr;
+    overflow: hidden;
+}
+.rent{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: rgb(177, 125, 67);
+    border-radius: 10px;
+    grid-template-columns: 1f 2fr;
+    overflow: hidden;
+}
+
+article{
+    
+   width: 900px;
+}
+
+.icon {
+    size: 10px;
+    margin-left: 5rem;
+    width: auto;
+  }
+
+.sub-feature {
+    display: flex;
+    justify-content:first baseline;   
+    padding-top: 1rem;
+    
+  }
+mat-icon{
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+.sub-feature-text-title{
+    
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.2rem;
+}
+
+.sub-feature-text-city{
+    
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+}
+
+.sub-feature-text{
+    
+    font-family: "Roboto", cursive;
+    font-size: 1.5rem;
+
+}
+
+button{
+    margin-top: 1rem;
+    margin-left: 16rem;
+}

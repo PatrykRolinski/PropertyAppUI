@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Property } from 'src/app/_models/property';
 import { PropertyService } from 'src/app/_services/property.service';
 
 @Component({

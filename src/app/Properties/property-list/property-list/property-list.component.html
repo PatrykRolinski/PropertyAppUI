@@ -1,6 +1,8 @@
 <p>property-list works!</p>
-    
+
+
+
 <ul *ngFor="let property of properties">
-    <li>{{property.price}}</li>
+    <app-property-card [property]="property"></app-property-card>
 </ul>
 
