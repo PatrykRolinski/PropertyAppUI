@@ -9,7 +9,8 @@ import { NavComponent } from './nav/nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from '@angular/material/icon';
-import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component'
+import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component';
+import { VerifytestComponent } from './verifyTest/verifytest/verifytest.component'
 
 
 
@@ -18,7 +19,8 @@ import { PropertyCardComponent } from './Properties/property-card/property-card/
     AppComponent,
     PropertyListComponent,
     NavComponent,
-    PropertyCardComponent
+    PropertyCardComponent,
+    VerifytestComponent
   ],
   imports: [
     BrowserModule,
