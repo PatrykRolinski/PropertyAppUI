@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { PropertyDetails } from '../_models/propertydetails';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,9 @@ baseUrl= environment.apiUrl;
 
   getProperties(){
     return this.http.get(this.baseUrl + "property")
+  }
+
+  getProperty(id:string){
+    return  this.http.get<PropertyDetails>(this.baseUrl + "property/"+ id)
   }
 }

@@ -1,0 +1,64 @@
+<div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 pb-xxl-4 text-center text-white overflow-hidden">
+  <div class="my-3 py-3">
+    <h2 class="display-5">Property details</h2>
+  </div>
+  <div id="main-component" style="width: 80%; height: 700px; border-radius: 21px 21px 0 0;">
+
+    <div>
+      <div id="description">
+        <h2>Description </h2>
+        <p>{{property.description}}</p>
+      </div>
+      <div id="key-features">
+        <h3>Key features</h3>         
+        <div class="features" style="display: grid; grid-template-columns: 1fr 1fr;">
+          <p><mat-icon>house</mat-icon>Property type:  {{property.propertyType}}</p>
+          <p><mat-icon>bed</mat-icon>Number of rooms:  {{property.numberOfRooms}}</p>
+          <p><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property.closedKitchen}}</p>
+          <p><mat-icon>layers</mat-icon>Floor:  {{property.floor}}</p>   
+          <p><mat-icon>aspect_ratio</mat-icon>Property size:  {{property.propertySize}}</p>  
+          <p><mat-icon>layers</mat-icon>Market type: {{property.marketType}}</p>  
+        </div>       
+      </div>
+      <div class="mt-5" style="font-family: 'Rubik Mono One'; color: black; text-align: right;">
+        <p>Property status: {{property.propertyStatus}}<p>
+        <p>Price: {{property.price}}$<p>
+      </div>
+      
+      
+    </div>
+    <div>
+      <!-- <img src="{{property.mainPhotoUrl}}"> -->
+      <div id="carouselExampleControls" class="carousel carousel-fade" data-bs-ride="false">
+        <div class="carousel-inner">
+            <ul *ngFor="let propertyImage of property.photos;let i=index; first as isFirst" style="list-style: none;">
+                <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
+                    <li><img src={{propertyImage.url}} class="d-block w-100 carousel-pic" alt="..."></li>
+                </div>                                     
+            </ul>       
+                    
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>  
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

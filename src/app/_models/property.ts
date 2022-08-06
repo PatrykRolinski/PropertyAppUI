@@ -1,4 +1,5 @@
 export class Property{
+    id:number;
     price: number;
     propertyType: string;
     propertySize:number;

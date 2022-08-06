@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component';
 import { VerifytestComponent } from './users/user-verify/user-verify.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PropertyDetailComponent } from './Properties/property-detail/property-detail/property-detail.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PropertyListComponent,
     NavComponent,
     PropertyCardComponent,
-    VerifytestComponent, 
+    VerifytestComponent,
+    PropertyDetailComponent, 
     
   ],
   imports: [
