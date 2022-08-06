@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from '@angular/material/icon';
 import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component';
 import { VerifytestComponent } from './users/user-verify/user-verify.component'
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { VerifytestComponent } from './users/user-verify/user-verify.component'
     PropertyListComponent,
     NavComponent,
     PropertyCardComponent,
-    VerifytestComponent
+    VerifytestComponent, 
+    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { VerifytestComponent } from './users/user-verify/user-verify.component'
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
     
   ],
   providers: [],
