@@ -27,14 +27,24 @@
         </li>
       </ul>
 
-      <div class="btn-group" class="me-5">
+      <div *ngIf="(accountService.currentUser$| async)" class="btn-group me-5">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" (click)="logOut()" href="#">Logout</a></li>          
+        </ul>
+      </div>
+
+
+      <div *ngIf="(accountService.currentUser$| async)===null" class="btn-group" class="me-5">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
           data-bs-toggle="dropdown" aria-expanded="false">
           Login
         </button>
 
         <ul class="dropdown-menu ms-5" aria-labelledby="dropdownMenuButton1" style="width: 600px;">
-           <form *ngIf="(accountService.currentUser$| async)===null"  #loginForm="ngForm" class="px-4 py-3" (ngSubmit)="login()" autocomplete="off"> 
+           <form   #loginForm="ngForm" class="px-4 py-3" (ngSubmit)="login()" autocomplete="off"> 
            
             <div class="input-groups">
               <div class="mb-3">
@@ -61,8 +71,7 @@
           </form>
            <div *ngIf="(accountService.currentUser$| async)">
             <li><a class="dropdown-item" (click)="logOut()" href="#">Logout</a></li>
-          </div> 
-          
+          </div>           
         </ul>
 
       </div>

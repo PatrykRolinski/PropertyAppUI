@@ -11,7 +11,7 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-model:UserLogin={email:"ghost3020@gmail.com", password:"string"};
+model:UserLogin={email:"", password:""};
 currentUser$:Observable<User>;
   constructor(public accountService:AccountService, private http:HttpClient) { }
 
@@ -21,6 +21,8 @@ currentUser$:Observable<User>;
 login(){
 this.accountService.login(this.model).subscribe();
 console.log("email:"+this.model.email + " password:"+ this.model.password )
+this.model.email="";
+this.model.password="";
 
 }
 logOut(){
