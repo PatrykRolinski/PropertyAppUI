@@ -1,0 +1,17 @@
+.navbar-brand{
+    color: rgb(240, 230, 140)
+}
+.input-groups{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+#login{
+    display: flex;    
+}
+
+  .dropdown {text-align:center;}
+  .button, .dropdown-menu {margin:10px auto}
+  .dropdown-menu {width:200px; left:65%; margin-left:-100px;}

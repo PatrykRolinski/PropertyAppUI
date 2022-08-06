@@ -10,7 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from '@angular/material/icon';
 import { PropertyCardComponent } from './Properties/property-card/property-card/property-card.component';
-import { VerifytestComponent } from './verifyTest/verifytest/verifytest.component'
+import { VerifytestComponent } from './users/user-verify/user-verify.component'
 
 
 

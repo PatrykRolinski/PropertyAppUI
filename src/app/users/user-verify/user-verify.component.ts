@@ -5,8 +5,8 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-verifytest',
-  templateUrl: './verifytest.component.html',
-  styleUrls: ['./verifytest.component.css']
+  templateUrl: './user-verify.component.html',
+  styleUrls: ['./user-verify.component.css']
 })
 export class VerifytestComponent implements OnInit {
 token:string
