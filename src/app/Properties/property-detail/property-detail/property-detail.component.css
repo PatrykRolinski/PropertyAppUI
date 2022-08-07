@@ -39,6 +39,7 @@ text-align: left;
 }
 #description p{
     font-size: 0.9rem;
+    text-align: justify;
 }
 #key-features{
     margin-left: 2rem;

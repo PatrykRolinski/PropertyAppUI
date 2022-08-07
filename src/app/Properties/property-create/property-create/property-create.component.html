@@ -1,0 +1,22 @@
+<form [formGroup]="createForm">
+    <h2>Create property</h2>
+    <hr>
+    <app-text-input [formControl]='createForm.controls["description"]' [label]='"Description"' [type]="'textarea'"></app-text-input>
+    <app-text-input [formControl]='createForm.controls["price"]' [label]='"Price"'></app-text-input>
+    <app-text-input [formControl]='createForm.controls["country"]' [label]='"City"'></app-text-input>
+    <app-text-input [formControl]='createForm.controls["street"]' [label]='"Street"'></app-text-input>
+    <div class="form-group">
+        <label class="control-label" style="margin-right: 10px;">Closed Kitchen</label>
+        <label class="radio-inline">
+            <input type="radio" value="true" formControlName="closedkitchen">True
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="false" formControlName="closedkitchen" class="ml-3">False
+        </label>
+    </div>
+    <app-text-input [formControl]='createForm.controls["photofile"]' [label]='"Main Photo"' [type]="'file'"></app-text-input>
+    
+    <div class="form-group text-center">
+        <button [disabled]='!createForm.valid' class="btn btn-danger mr-2" type="submit">Register</button>       
+    </div>
+</form>

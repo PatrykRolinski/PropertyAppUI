@@ -13,6 +13,8 @@ import { PropertyCardComponent } from './Properties/property-card/property-card/
 import { VerifytestComponent } from './users/user-verify/user-verify.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertyDetailComponent } from './Properties/property-detail/property-detail/property-detail.component';
+import { PropertyCreateComponent } from './properties/property-create/property-create/property-create.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 
 
@@ -23,7 +25,9 @@ import { PropertyDetailComponent } from './Properties/property-detail/property-d
     NavComponent,
     PropertyCardComponent,
     VerifytestComponent,
-    PropertyDetailComponent, 
+    PropertyDetailComponent,
+    PropertyCreateComponent,
+    TextInputComponent, 
     
   ],
   imports: [
