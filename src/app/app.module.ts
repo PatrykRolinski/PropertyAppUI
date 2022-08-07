@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertyDetailComponent } from './Properties/property-detail/property-detail/property-detail.component';
 import { PropertyCreateComponent } from './properties/property-create/property-create/property-create.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { TextTextareaComponent } from './_forms/text-textarea/text-textarea/text-textarea.component';
 
 
 
@@ -27,7 +28,8 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     VerifytestComponent,
     PropertyDetailComponent,
     PropertyCreateComponent,
-    TextInputComponent, 
+    TextInputComponent,
+    TextTextareaComponent, 
     
   ],
   imports: [

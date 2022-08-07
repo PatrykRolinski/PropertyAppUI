@@ -1,0 +1,67 @@
+.propertyform{
+    display: grid; 
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    white-space: nowrap;
+   
+}
+
+.propertyform h2{
+    margin-left: 1.5rem;
+    padding-right: 1rem;
+    margin-right: 4.3rem;
+}
+.propertyform app-text-input{
+    padding-right: 1.5rem;
+}
+.price app-text-input{
+    margin-left: 1.8rem;
+    padding-right: 1rem;
+    
+}
+
+
+
+.markettype select{
+margin-left: -2.5rem;
+}
+
+.propertystatus select{
+    margin-left: -4.1rem;
+    }
+
+.closedkitchen select{
+        margin-left: -3.9rem;
+        }
+
+ .floor app-text-input {
+  max-width: 11rem;
+            
+        }
+.size app-text-input {
+    max-width: 11rem;
+    margin-left: -2.8rem;
+}
+
+.nrofrooms app-text-input {
+    max-width: 11rem;
+    margin-left: -2.2rem;
+}
+.fileupload input{
+    margin-left: 3rem;
+}
+form{
+    padding-bottom: 4rem;
+    margin-left: 30%;
+}
+select{
+    width: fit-content;
+}
+
+.description h2{
+margin-left: 42%;
+}
+
+button{
+    margin-top: 1rem;
+}

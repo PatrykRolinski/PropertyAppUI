@@ -1,22 +1,92 @@
-<form [formGroup]="createForm">
-    <h2>Create property</h2>
+<form [formGroup]="createForm" (ngSubmit)="create()">
+  <div style="max-width: 600px;">
+
+
+    <h2 class="title">Property form</h2>
     <hr>
-    <app-text-input [formControl]='createForm.controls["description"]' [label]='"Description"' [type]="'textarea'"></app-text-input>
-    <app-text-input [formControl]='createForm.controls["price"]' [label]='"Price"'></app-text-input>
-    <app-text-input [formControl]='createForm.controls["country"]' [label]='"City"'></app-text-input>
-    <app-text-input [formControl]='createForm.controls["street"]' [label]='"Street"'></app-text-input>
-    <div class="form-group">
-        <label class="control-label" style="margin-right: 10px;">Closed Kitchen</label>
-        <label class="radio-inline">
-            <input type="radio" value="true" formControlName="closedkitchen">True
-        </label>
-        <label class="radio-inline">
-            <input type="radio" value="false" formControlName="closedkitchen" class="ml-3">False
-        </label>
+    <div class="propertyform address">
+      <h2>Address</h2>
+      <div>
+        <app-text-input [formControl]='createForm.controls["country"]' [label]='"Country"'></app-text-input>
+        <app-text-input [formControl]='createForm.controls["city"]' [label]='"City"'></app-text-input>
+        <app-text-input [formControl]='createForm.controls["street"]' [label]='"Street"'></app-text-input>
+      </div>
     </div>
-    <app-text-input [formControl]='createForm.controls["photofile"]' [label]='"Main Photo"' [type]="'file'"></app-text-input>
-    
+    <hr>
+    <div class="propertyform price">
+      <h2>Price</h2>
+      <app-text-input [type]="'number'" [formControl]='createForm.controls["price"]' [label]='"Price"'></app-text-input>
+    </div>
+    <hr>
+
+    <div class="propertyform size">
+      <h2>Property size</h2>
+      <app-text-input [type]="'number'" [formControl]='createForm.controls["propertysize"]' [label]='"Property Size"'></app-text-input>
+    </div>
+    <hr>
+    <div class="propertyform floor">
+        <h2>Floor nr</h2>
+        <app-text-input [type]="'number'" [formControl]='createForm.controls["floor"]' [label]='"Floor nr"'></app-text-input>
+      </div>
+      <hr>
+    <div class="propertyform nrofrooms">
+      <h2>Nr of rooms</h2>
+      <app-text-input [type]="'number'" [formControl]='createForm.controls["numberofrooms"]' [label]='"Nr of rooms"'></app-text-input>
+    </div>
+
+    <!-- <div class="form-group">
+           <label class="control-label" style="margin-right: 10px;">Market Type</label>
+           <label class="radio-inline">
+               <input type="radio" value="primary" formControlName="markettype">Primary
+           </label>
+           <label class="radio-inline">
+               <input type="radio" value="secondary" formControlName="markettype" class="ml-3">Secondary
+           </label>
+       </div>
+   
+    -->
+    <hr>
+    <div class="propertyform markettype">
+      <h2>Market Type</h2>
+      <select id="markettype" class="form-select" formControlName="markettype">
+        <option *ngFor="let c of marketTypes" [ngValue]="c">{{ c }}</option>
+      </select>
+    </div>
+    <hr>
+    <div class="propertyform propertystatus">
+      <h2>Property Status</h2>
+      <select id="propertystatus" class="form-select" formControlName="propertystatus">
+        <option *ngFor="let c of propertyStatus" [ngValue]="c">{{ c }}</option>
+      </select>
+    </div>
+
+    <div class="propertyform closedkitchen">
+      <h2>Closed Kitchen</h2>
+      <select id="closedkitchen" class="form-select" formControlName="closedkitchen">
+        <option *ngFor="let c of closedKitchen" [ngValue]="c">{{ c==="True"? "Yes": "No" }}</option>
+      </select>
+    </div>
+
+
+
+
+    <div class="propertyform fileupload">
+      <h2>Main Photo</h2>
+      <input type="file" (change)="uploadFile($event)">
+    </div>
+
+    <div class="description">
+      <h2>Description</h2>
+      <app-text-textarea [formControl]='createForm.controls["description"]' [label]='"Description"'>
+      </app-text-textarea>
+    </div>
+
+
+
+
+
     <div class="form-group text-center">
-        <button [disabled]='!createForm.valid' class="btn btn-danger mr-2" type="submit">Register</button>       
+      <button [disabled]='!createForm.valid' class="btn btn-danger mr-2" type="submit">Register</button>
     </div>
+  </div>
 </form>

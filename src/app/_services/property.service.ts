@@ -17,4 +17,8 @@ baseUrl= environment.apiUrl;
   getProperty(id:string){
     return  this.http.get<PropertyDetails>(this.baseUrl + "property/"+ id)
   }
+
+  createProperty(model:any){
+    return this.http.post(this.baseUrl + "property",model)
+  }
 }

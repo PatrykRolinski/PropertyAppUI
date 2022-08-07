@@ -7,22 +7,22 @@
     <div>
       <div id="description">
         <h2>Description </h2>
-        <p>{{property.description}}</p>
+        <p>{{property?.description}}</p>
       </div>
       <div id="key-features">
         <h3>Key features</h3>         
         <div class="features" style="display: grid; grid-template-columns: 1fr 1fr;">
-          <p><mat-icon>house</mat-icon>Property type:  {{property.propertyType}}</p>
-          <p><mat-icon>bed</mat-icon>Number of rooms:  {{property.numberOfRooms}}</p>
-          <p><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property.closedKitchen}}</p>
-          <p><mat-icon>layers</mat-icon>Floor:  {{property.floor}}</p>   
-          <p><mat-icon>aspect_ratio</mat-icon>Property size:  {{property.propertySize}}</p>  
-          <p><mat-icon>layers</mat-icon>Market type: {{property.marketType}}</p>  
+          <p><mat-icon>house</mat-icon>Property type:  {{property?.propertyType}}</p>
+          <p><mat-icon>bed</mat-icon>Number of rooms:  {{property?.numberOfRooms}}</p>
+          <p><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property?.closedKitchen}}</p>
+          <p><mat-icon>layers</mat-icon>Floor:  {{property?.floor}}</p>   
+          <p><mat-icon>aspect_ratio</mat-icon>Property size:  {{property?.propertySize}}</p>  
+          <p style="white-space: nowrap"><mat-icon>layers</mat-icon>Market type: {{property?.marketType}}</p>  
         </div>       
       </div>
       <div class="mt-5" style="font-family: 'Rubik Mono One'; color: black; text-align: right;">
-        <p>Property status: {{property.propertyStatus}}<p>
-        <p>Price: {{property.price}}$<p>
+        <p>Property status: {{property?.propertyStatus}}<p>
+        <p>Price: {{property?.price}}$<p>
       </div>
       
       
@@ -31,9 +31,9 @@
       <!-- <img src="{{property.mainPhotoUrl}}"> -->
       <div id="carouselExampleControls" class="carousel carousel-fade" data-bs-ride="false">
         <div class="carousel-inner">
-            <ul *ngFor="let propertyImage of property.photos;let i=index; first as isFirst" style="list-style: none;">
+            <ul *ngFor="let propertyImage of property?.photos;let i=index; first as isFirst" style="list-style: none;">
                 <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
-                    <li><img src={{propertyImage.url}} class="d-block w-100 carousel-pic" alt="..."></li>
+                    <li><img src={{propertyImage?.url}} class="d-block w-100 carousel-pic" alt="..."></li>
                 </div>                                     
             </ul>       
                     
