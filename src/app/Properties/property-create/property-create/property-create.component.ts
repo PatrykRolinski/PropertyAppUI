@@ -13,6 +13,7 @@ createForm:FormGroup;
 marketTypes: string[] = ['Primary', 'Secondary'];
 propertyStatus: string[]= ["Sale", "Rent"]
 closedKitchen:string[]=["True", "False"]
+propertytypes:string[]=["Flat","House", "Garage","Castle"]
 
   constructor(private fb:FormBuilder, private propertyService:PropertyService,private router:Router) { }
 
@@ -30,6 +31,7 @@ initializeForm(){
     numberofrooms:['', Validators.required],
     propertystatus:['Sale', Validators.required],
     markettype:['Primary', Validators.required],
+    propertytype:['Flat', Validators.required],
     floor:[''],
     closedkitchen:['True', Validators.required],
     photofile:[null]
@@ -58,7 +60,8 @@ form(){
   formData.append('numberofrooms', this.createForm.get("numberofrooms").value)
   formData.append('propertystatus', this.createForm.get("propertystatus").value)
   formData.append('markettype', this.createForm.get("markettype").value)
-  formData.append('floor', this.createForm.get("floor").value)  
+  formData.append('floor', this.createForm.get("floor").value) 
+  formData.append('propertytype', this.createForm.get("propertytype").value)
   
   return formData
 }

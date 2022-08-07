@@ -46,6 +46,13 @@
    
     -->
     <hr>
+    <div class="propertyform propertytype">
+      <h2>Property Type</h2>
+      <select id="propertytype" class="form-select" formControlName="propertytype">
+        <option *ngFor="let c of propertytypes" [ngValue]="c">{{ c }}</option>
+      </select>
+    </div>
+    <hr>
     <div class="propertyform markettype">
       <h2>Market Type</h2>
       <select id="markettype" class="form-select" formControlName="markettype">

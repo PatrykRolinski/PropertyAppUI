@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,9 @@ import { PropertyDetailComponent } from './Properties/property-detail/property-d
 import { PropertyCreateComponent } from './properties/property-create/property-create/property-create.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { TextTextareaComponent } from './_forms/text-textarea/text-textarea/text-textarea.component';
+import { UserCreatedPropertiesComponent } from './users/user-created-properties/user-created-properties/user-created-properties.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { PropertyEditComponent } from './Properties/property-edit/property-edit/property-edit.component';
 
 
 
@@ -29,7 +32,9 @@ import { TextTextareaComponent } from './_forms/text-textarea/text-textarea/text
     PropertyDetailComponent,
     PropertyCreateComponent,
     TextInputComponent,
-    TextTextareaComponent, 
+    TextTextareaComponent,
+    UserCreatedPropertiesComponent,
+    PropertyEditComponent, 
     
   ],
   imports: [
@@ -43,7 +48,8 @@ import { TextTextareaComponent } from './_forms/text-textarea/text-textarea/text
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,35 +1,42 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark mb-4">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Property App</a>
+    <a class="navbar-brand ms-4" href="#">Property App</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">    
+        
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">FIND A PROPERTY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/property/create">CREATE A PROPERTY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">MESSAGES</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>            
+      </ul>
+      <ul class="navbar-nav me-5 mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">FIND A PROPERTY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/property/create">CREATE A PROPERTY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">MESSAGES</a>
+          <a class="nav-link active" aria-current="page" href="/user/properties">YOUR PROPERTIES</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">CONTACT US</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+        </li>    
       </ul>
-
+      
       <div *ngIf="(accountService.currentUser$| async)" class="btn-group me-5">
           <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="visually-hidden">Toggle Dropdown</span>
@@ -39,7 +46,7 @@
         </ul>
       </div>
 
-
+     
       <div *ngIf="(accountService.currentUser$| async)===null" class="btn-group" class="me-5">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
           data-bs-toggle="dropdown" aria-expanded="false">

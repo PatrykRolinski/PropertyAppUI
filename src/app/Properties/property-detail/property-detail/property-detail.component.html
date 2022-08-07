@@ -11,11 +11,11 @@
       </div>
       <div id="key-features">
         <h3>Key features</h3>         
-        <div class="features" style="display: grid; grid-template-columns: 1fr 1fr;">
-          <p><mat-icon>house</mat-icon>Property type:  {{property?.propertyType}}</p>
-          <p><mat-icon>bed</mat-icon>Number of rooms:  {{property?.numberOfRooms}}</p>
-          <p><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property?.closedKitchen}}</p>
-          <p><mat-icon>layers</mat-icon>Floor:  {{property?.floor}}</p>   
+        <div class="features" style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem;">
+          <p style="white-space: nowrap"><mat-icon>house</mat-icon>Property type:  {{property?.propertyType}}</p>
+          <p style="white-space: nowrap"><mat-icon>bed</mat-icon>Number of rooms:  {{property?.numberOfRooms}}</p>
+          <p style="white-space: nowrap"><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property?.closedKitchen===false? "Yes":"No"}}</p>
+          <p><mat-icon>layers</mat-icon>Floor:  {{property?.floor}}</p>  
           <p><mat-icon>aspect_ratio</mat-icon>Property size:  {{property?.propertySize}}</p>  
           <p style="white-space: nowrap"><mat-icon>layers</mat-icon>Market type: {{property?.marketType}}</p>  
         </div>       

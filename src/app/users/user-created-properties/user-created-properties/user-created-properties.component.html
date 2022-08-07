@@ -1,0 +1,21 @@
+<p>user-created-properties works!</p>
+
+
+<div class="card-deck">
+    <div  *ngFor="let property of properties"  class="card" >
+      <img width="300" height="300" src="{{property.mainPhotoUrl}}" class="card-img-top" alt="...">
+      <div class="card-body">
+          <div>
+              <p class="card-text">Price: {{property.price}} $</p>
+              <p class="card-text">Country: {{property.country}}</p>
+              <p class="card-text">City: {{property.city}}</p>
+              <p class="card-text">Street: {{property.street}}</p>
+          </div> 
+        </div>
+        <button class=" btn btn-primary" routerLink="/property/{{property.id}}/details">Go to update property</button>             
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>      
+</div>
+ 

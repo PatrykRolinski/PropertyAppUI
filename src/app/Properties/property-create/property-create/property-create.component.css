@@ -26,6 +26,10 @@
 margin-left: -2.5rem;
 }
 
+.propertytype select{
+    margin-left: -3.5rem;
+    }
+
 .propertystatus select{
     margin-left: -4.1rem;
     }
