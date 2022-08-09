@@ -73,7 +73,7 @@ create(){
 this.propertyService.createProperty(this.form()).subscribe({
   next: response=> console.log(response),
   error: error=> console.log(error),
-  complete: ()=> this.router.navigateByUrl('/')
+  complete: ()=> this.router.navigateByUrl('user/properties')
 },)
 }  
 

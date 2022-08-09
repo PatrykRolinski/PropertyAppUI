@@ -19,6 +19,8 @@ import { TextTextareaComponent } from './_forms/text-textarea/text-textarea/text
 import { UserCreatedPropertiesComponent } from './users/user-created-properties/user-created-properties/user-created-properties.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { PropertyEditComponent } from './Properties/property-edit/property-edit/property-edit.component';
+import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
+import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 
 
 
@@ -34,7 +36,9 @@ import { PropertyEditComponent } from './Properties/property-edit/property-edit/
     TextInputComponent,
     TextTextareaComponent,
     UserCreatedPropertiesComponent,
-    PropertyEditComponent, 
+    PropertyEditComponent,
+    UserRegisterComponent,
+    UserAfterRegisterComponent, 
     
   ],
   imports: [

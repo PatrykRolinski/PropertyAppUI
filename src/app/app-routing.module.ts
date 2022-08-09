@@ -4,16 +4,21 @@ import { PropertyCreateComponent } from './properties/property-create/property-c
 import { PropertyDetailComponent } from './Properties/property-detail/property-detail/property-detail.component';
 import { PropertyEditComponent } from './Properties/property-edit/property-edit/property-edit.component';
 import { PropertyListComponent } from './Properties/property-list/property-list/property-list.component';
+import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 import { UserCreatedPropertiesComponent } from './users/user-created-properties/user-created-properties/user-created-properties.component';
+import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
 import { VerifytestComponent } from './users/user-verify/user-verify.component';
 
 const routes: Routes = [
-{path: '', component:PropertyListComponent},
+{path:'', component:UserRegisterComponent},
+{path:'account/register-success', component:UserAfterRegisterComponent},
+{path: 'properties', component:PropertyListComponent},
 {path: 'property/:id/details', component:PropertyDetailComponent},
 {path: "account/verify", component:VerifytestComponent},
 {path: 'property/create', component:PropertyCreateComponent},
 {path: 'property/:id/edit', component:PropertyEditComponent},
-{path: "user/properties", component:UserCreatedPropertiesComponent}
+{path: "user/properties", component:UserCreatedPropertiesComponent},
+{path:"account/register", component:UserRegisterComponent}
 ];
 
 @NgModule({
