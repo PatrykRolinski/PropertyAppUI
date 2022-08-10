@@ -1,1 +1,93 @@
-<p>property-edit works!</p>
+
+<form [formGroup]="editForm" (ngSubmit)="edit()">
+    <div style="max-width: 600px;">
+  
+        <h2 class="title">Edit form</h2>
+    <img src="{{property?.mainPhotoUrl}}">
+      <hr>
+      <div class="propertyform address">
+        <h2>Address</h2>
+        <div>
+          <app-text-input [formControl]='editForm.controls["country"]' [label]='"Country"'></app-text-input>
+          <app-text-input [formControl]='editForm.controls["city"]' [label]='"City"'></app-text-input>
+          <app-text-input [formControl]='editForm.controls["street"]' [label]='"Street"'></app-text-input>
+        </div>
+      </div>
+      <hr>
+      <div class="propertyform price">
+        <h2>Price</h2>
+        <app-text-input [type]="'number'" [formControl]='editForm.controls["price"]' [label]='"Price"'></app-text-input>
+      </div>
+      <hr>
+  
+      <div class="propertyform size">
+        <h2>Property size</h2>
+        <app-text-input [type]="'number'" [formControl]='editForm.controls["propertysize"]' [label]='"Property Size"'></app-text-input>
+      </div>
+      <hr>
+      <div class="propertyform floor">
+          <h2>Floor nr</h2>
+          <app-text-input [type]="'number'" [formControl]='editForm.controls["floor"]' [label]='"Floor nr"'></app-text-input>
+        </div>
+        <hr>
+      <div class="propertyform nrofrooms">
+        <h2>Nr of rooms</h2>
+        <app-text-input [type]="'number'" [formControl]='editForm.controls["numberofrooms"]' [label]='"Nr of rooms"'></app-text-input>
+      </div>
+  
+      <!-- <div class="form-group">
+             <label class="control-label" style="margin-right: 10px;">Market Type</label>
+             <label class="radio-inline">
+                 <input type="radio" value="primary" formControlName="markettype">Primary
+             </label>
+             <label class="radio-inline">
+                 <input type="radio" value="secondary" formControlName="markettype" class="ml-3">Secondary
+             </label>
+         </div>
+     
+      -->
+      <hr>
+      <div class="propertyform propertytype">
+        <h2>Property Type</h2>
+        <select id="propertytype" class="form-select" formControlName="propertytype">
+          <option *ngFor="let c of propertytypes" [ngValue]="c">{{ c }}</option>
+        </select>
+      </div>
+      <hr>
+      <div class="propertyform markettype">
+        <h2>Market Type</h2>
+        <select id="markettype" class="form-select" formControlName="markettype">
+          <option *ngFor="let c of marketTypes" [ngValue]="c">{{ c }}</option>
+        </select>
+      </div>
+      <hr>
+      <div class="propertyform propertystatus">
+        <h2>Property Status</h2>
+        <select id="propertystatus" class="form-select" formControlName="propertystatus">
+          <option *ngFor="let c of propertyStatus" [ngValue]="c">{{ c }}</option>
+        </select>
+      </div>
+  
+      <div class="propertyform closedkitchen">
+        <h2>Closed Kitchen</h2>
+        <select id="closedkitchen" class="form-select" formControlName="closedkitchen">
+          <option *ngFor="let c of closedKitchen" [ngValue]="c">{{ c===true ? "Yes":"No"}}</option>
+        </select>
+      </div>
+  
+      <div class="description">
+        <h2>Description</h2>
+        <app-text-textarea [formControl]='editForm.controls["description"]' [label]='"Description"'>
+        </app-text-textarea>
+      </div>
+  
+  
+  
+  
+  
+      <div class="form-group text-center">
+        <button [disabled]='!editForm.valid || !editForm.dirty' class="btn btn-danger mr-2" type="submit">Update</button>
+      </div>
+    </div>
+  </form>
+  

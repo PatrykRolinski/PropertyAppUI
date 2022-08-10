@@ -21,4 +21,7 @@ baseUrl= environment.apiUrl;
   createProperty(model:any){
     return this.http.post(this.baseUrl + "property",model)
   }
+  updateProperty(model:any, id:string){
+    return this.http.put(this.baseUrl + "property/" + id,model)
+  }
 }

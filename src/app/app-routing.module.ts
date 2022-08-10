@@ -14,6 +14,7 @@ const routes: Routes = [
 {path:'account/register-success', component:UserAfterRegisterComponent},
 {path: 'properties', component:PropertyListComponent},
 {path: 'property/:id/details', component:PropertyDetailComponent},
+{path: 'property/:id/edit', component:PropertyEditComponent},
 {path: "account/verify", component:VerifytestComponent},
 {path: 'property/create', component:PropertyCreateComponent},
 {path: 'property/:id/edit', component:PropertyEditComponent},
