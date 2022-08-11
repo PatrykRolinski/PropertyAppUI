@@ -24,4 +24,7 @@ baseUrl= environment.apiUrl;
   updateProperty(model:any, id:string){
     return this.http.put(this.baseUrl + "property/" + id,model)
   }
+  deleteProperty(id:string){
+    return this.http.delete(this.baseUrl + "property/" + id );
+  }
 }

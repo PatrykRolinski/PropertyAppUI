@@ -1,7 +1,11 @@
 
+  <div class="col-8">
+    <div class="alert alert-warning" style="margin-left:30rem;" *ngIf="editForm.dirty">
+        <strong>Information: </strong> You have made changes. Any unsaved changes will be lost 
+    </div>
+</div>
 <form [formGroup]="editForm" (ngSubmit)="edit()">
     <div style="max-width: 600px;">
-  
         <h2 class="title">Edit form</h2>
     <img src="{{property?.mainPhotoUrl}}">
       <hr>

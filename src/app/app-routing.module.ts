@@ -8,16 +8,16 @@ import { UserAfterRegisterComponent } from './users/user-after-register/user-aft
 import { UserCreatedPropertiesComponent } from './users/user-created-properties/user-created-properties/user-created-properties.component';
 import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
 import { VerifytestComponent } from './users/user-verify/user-verify.component';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
 {path:'', component:UserRegisterComponent},
 {path:'account/register-success', component:UserAfterRegisterComponent},
 {path: 'properties', component:PropertyListComponent},
 {path: 'property/:id/details', component:PropertyDetailComponent},
-{path: 'property/:id/edit', component:PropertyEditComponent},
 {path: "account/verify", component:VerifytestComponent},
 {path: 'property/create', component:PropertyCreateComponent},
-{path: 'property/:id/edit', component:PropertyEditComponent},
+{path: 'property/:id/edit', component:PropertyEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
 {path: "user/properties", component:UserCreatedPropertiesComponent},
 {path:"account/register", component:UserRegisterComponent}
 ];

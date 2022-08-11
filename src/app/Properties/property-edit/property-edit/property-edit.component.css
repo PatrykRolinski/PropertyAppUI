@@ -21,6 +21,11 @@
 }
 
 
+img{
+    max-width: 400px;
+    margin-left: 8rem;
+}
+
 
 .markettype select{
 margin-left: -2.5rem;

@@ -11,7 +11,11 @@
               <p class="card-text">Street: {{property.street}}</p>
           </div> 
         </div>
-        <button class=" btn btn-primary" routerLink="/property/{{property.id}}/edit">Go to update property</button>             
+        <div style="display: flex; justify-content: space-between; margin: 0.3rem 1rem;">
+          <button class="btn btn-primary" routerLink="/property/{{property.id}}/edit">Update description</button>          
+          <button class="btn btn-warning" routerLink="/property/{{property.id}}/edit">Manage Photo</button> 
+          <button type=button class="btn btn-danger"  (click)="deleteMethod(property.id)">Delete me</button>
+        </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>

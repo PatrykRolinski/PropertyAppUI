@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PropertyService } from 'src/app/_services/property.service';
 import { UserService } from 'src/app/_services/user.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class UserCreatedPropertiesComponent implements OnInit {
 properties:any;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private propertyService:PropertyService, private router: Router) { }
 
   ngOnInit(): void {
     this.userService.GetUserProperties().subscribe(respose=>{
@@ -18,5 +20,17 @@ properties:any;
     });
   }
 
+deleteMethod(id:any){
+  if(confirm("Are you sure to delete ?"))
+this.propertyService.deleteProperty(id).subscribe({
+  complete:()=> this.reloadComponent()
+}
+)
+}
 
+reloadComponent() {
+  this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  this.router.onSameUrlNavigation = 'reload';
+  this.router.navigate(['user/properties']);
+}
 }
