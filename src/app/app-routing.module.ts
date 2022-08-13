@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
 import { PropertyCreateComponent } from './properties/property-create/property-create/property-create.component';
 import { PropertyDetailComponent } from './Properties/property-detail/property-detail/property-detail.component';
 import { PropertyEditComponent } from './Properties/property-edit/property-edit/property-edit.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
 {path: 'property/create', component:PropertyCreateComponent},
 {path: 'property/:id/edit', component:PropertyEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
 {path: "user/properties", component:UserCreatedPropertiesComponent},
-{path:"account/register", component:UserRegisterComponent}
+{path:"account/register", component:UserRegisterComponent},
+{path: "property/:id/photo-manager", component: PhotoManagerComponent}
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { PropertyEditComponent } from './Properties/property-edit/property-edit/property-edit.component';
 import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
 import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
+import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
 
 
 
@@ -38,7 +39,8 @@ import { UserAfterRegisterComponent } from './users/user-after-register/user-aft
     UserCreatedPropertiesComponent,
     PropertyEditComponent,
     UserRegisterComponent,
-    UserAfterRegisterComponent, 
+    UserAfterRegisterComponent,
+    PhotoManagerComponent, 
     
   ],
   imports: [

@@ -1,24 +1,26 @@
-<h1 style="margin-left: 45%;">Your properties</h1>
-<div style="padding:5rem;" class="card-deck">
-  
-    <div  *ngFor="let property of properties"  class="card" >
+<div class="main-container">
+  <h1 style="margin:1rem 35%; white-space: nowrap;">Your properties</h1>  
+  <div class="list" *ngFor="let property of properties">
+    <div  class="card">
       <img width="300" height="300" src="{{property.mainPhotoUrl}}" class="card-img-top" alt="...">
       <div class="card-body">
+        <div style="display: flex; align-items: center; justify-content: space-between;">        
           <div>
-              <p class="card-text">Price: {{property.price}} $</p>
-              <p class="card-text">Country: {{property.country}}</p>
-              <p class="card-text">City: {{property.city}}</p>
-              <p class="card-text">Street: {{property.street}}</p>
-          </div> 
+            <p class="card-text">Country: {{property.country}}</p>
+            <p class="card-text">City: {{property.city}}</p>
+            <p class="card-text">Street: {{property.street}}</p>
+          </div>
+          <p class="card-text">Price: {{property.price}} $</p>
         </div>
-        <div style="display: flex; justify-content: space-between; margin: 0.3rem 1rem;">
-          <button class="btn btn-primary" routerLink="/property/{{property.id}}/edit">Update description</button>          
-          <button class="btn btn-warning" routerLink="/property/{{property.id}}/edit">Manage Photo</button> 
-          <button type=button class="btn btn-danger"  (click)="deleteMethod(property.id)">Delete me</button>
-        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;  justify-content: center; gap: 0.2rem; margin: 0.3rem 1rem;">
+        <button class="btn btn-primary" routerLink="/property/{{property.id}}/edit">Update description</button>
+        <button class="btn btn-warning" routerLink="/property/{{property.id}}/photo-manager">Manage Photo</button>
+        <button type=button class="btn btn-danger" (click)="deleteMethod(property.id)">Delete property</button>
+      </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
-    </div>      
+    </div>
+  </div>
 </div>
- 

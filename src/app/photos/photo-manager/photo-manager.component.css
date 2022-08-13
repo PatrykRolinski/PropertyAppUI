@@ -3,9 +3,11 @@
     margin: auto;
     padding-bottom: 2rem;
 }
-.list{
+
+.photo-list{
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem 1rem;
     margin: auto;
+    
 }
-
