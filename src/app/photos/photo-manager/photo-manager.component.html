@@ -16,13 +16,34 @@
         <div  *ngFor="let image of photos">            
                 <div class="card text-white bg-light" style="width: 18rem;">
                     <img src="{{image.url}}" class="card-img-top" alt="...">
-                    <div  class="card-body">   
-                        <button (click)="setAsMain(image.id)" class="btn btn-warning">Set as Main</button>                
-                        <button (click)="deleteMethod(image.id)" class="btn btn-danger">Delete</button>                                  
+                    <div style="display: flex; justify-content: space-between;" class="card-body">   
+                        <button (click)="setAsMain(image.id)" class="btn btn-warning">Set as Main</button>              
+                        
+                        <button (click)="deleteMethod(image.id)" mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                          </button>                              
                     </div>
                   </div>            
         </div>
     </div>
 
+    <form [formGroup]="myForm"  (ngSubmit)="submit()">
+        <h2 style="padding-top: 2rem; margin-left: 40%;">Add photos</h2>
+        <div style="width: 50%; margin: auto; display: flex; gap: 1rem 3rem; padding-bottom:2rem ;">
+        <div class="form-group">
+            <label for="file">File</label>
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                multiple
+                class="form-control"
+                (change)="uploadFile($event)">    
+        </div>
+    
+             <button class="btn btn-primary" [disabled]="!myForm.dirty" type="submit">Upload</button>
+         </div>     
+    
+    </form>
 </div>
 

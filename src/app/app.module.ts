@@ -22,7 +22,7 @@ import { PropertyEditComponent } from './Properties/property-edit/property-edit/
 import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
 import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
-
+import {MatButtonModule} from '@angular/material/button'
 
 
 @NgModule({
@@ -51,7 +51,8 @@ import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.comp
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
     
   ],
   providers: [

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Photo } from 'src/app/_models/photo';
 import { PhotoService } from 'src/app/_services/photo.service';
@@ -49,5 +50,25 @@ reloadComponent() {
 }
 
 
+myFiles:string [] = [];
+myForm = new FormGroup({  
+  file: new FormControl('', [Validators.required])
+});
 
+
+uploadFile(event) {
+   
+  for (var i = 0; i < event.target.files.length; i++) { 
+      this.myFiles.push(event.target.files[i]);
+  }
+}
+
+submit(){
+  const formFiles = new FormData();
+ 
+    for (var i = 0; i < this.myFiles.length; i++) { 
+      formFiles.append("formFiles", this.myFiles[i]);
+    }
+   this.photoService.addPhoto(this.propertyId, formFiles).subscribe()
+}
 }

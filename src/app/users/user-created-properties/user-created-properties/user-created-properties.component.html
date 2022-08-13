@@ -15,8 +15,10 @@
       </div>
       <div style="display: flex; flex-wrap: wrap;  justify-content: center; gap: 0.2rem; margin: 0.3rem 1rem;">
         <button class="btn btn-primary" routerLink="/property/{{property.id}}/edit">Update description</button>
-        <button class="btn btn-warning" routerLink="/property/{{property.id}}/photo-manager">Manage Photo</button>
-        <button type=button class="btn btn-danger" (click)="deleteMethod(property.id)">Delete property</button>
+        <button class="btn btn-warning" routerLink="/property/{{property.id}}/photo-manager">Manage Photo</button>        
+        <button (click)="deleteMethod(property.id)" mat-fab color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>      
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>

@@ -19,4 +19,7 @@ baseUrl= environment.apiUrl
   setAsMainPhoto(propertyId:string, photoId:any){
     return this.http.put(this.baseUrl + "property/" + propertyId + "/photo/set-main-photo/" + photoId, {});
   }
+  addPhoto(propertyId:string, model:any){
+    return this.http.post(this.baseUrl + "property/" + propertyId + "/photo", model)
+  }
 }
