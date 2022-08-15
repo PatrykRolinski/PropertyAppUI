@@ -2,10 +2,12 @@
     width: 70%;
     margin: auto;
     padding-bottom: 2rem;
+    
 }
 .list{
-    display: flex;
-    gap: 0.5rem 1rem;
-    margin: auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+gap: 1rem;
+   
 }
 
