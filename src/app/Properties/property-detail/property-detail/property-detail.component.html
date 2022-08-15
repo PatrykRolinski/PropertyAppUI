@@ -33,7 +33,7 @@
         <div class="carousel-inner">
             <ul *ngFor="let propertyImage of property?.photos;let i=index; first as isFirst" style="list-style: none;">
                 <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
-                    <li><img src={{propertyImage?.url}} class="d-block w-100 carousel-pic" alt="..."></li>
+                    <li><img src={{propertyImage?.url}}  (error)="pictNotLoading($event)" class="d-block w-100 carousel-pic" alt="..."></li>
                 </div>                                     
             </ul>       
                     

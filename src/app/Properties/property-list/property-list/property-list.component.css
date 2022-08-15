@@ -3,3 +3,37 @@ ul{
     justify-content: center;
 }
 
+.paramsForm{
+    width: 70%;
+    margin: auto;    
+    display: grid;
+    row-gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.address{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    
+    
+}
+.size{
+    display: flex;
+    justify-content: center;
+    gap: 20px;    
+    align-items: flex-end;
+}
+
+.size select{
+    margin-top: 5px;
+}
+
+.sort-by{
+    display: flex;
+    justify-content: space-between;
+}
+.sort-by select{
+    width: fit-content
+}
+

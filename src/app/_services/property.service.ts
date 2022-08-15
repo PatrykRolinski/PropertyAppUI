@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { PaginatedResult } from '../_models/pagination';
 import { Property } from '../_models/property';
 import { PropertyDetails } from '../_models/propertydetails';
+import { UserParams } from '../_models/userParams';
 
 @Injectable({
   providedIn: 'root'
@@ -13,28 +14,78 @@ import { PropertyDetails } from '../_models/propertydetails';
 export class PropertyService {
 baseUrl= environment.apiUrl;
 property: Property[]= [];
-paginatedResult:PaginatedResult<Property[]>= new PaginatedResult<Property[]>();
+
   constructor(private http: HttpClient) { }
 
-  getProperties(pageNumber?:number, pageSize?:number){
-    let params= new HttpParams();
-
-    if(pageNumber!== null && pageSize!==null){
-
-     params= params.append("pageNumber", pageNumber?.toString());
-     params=params.append("pageSize", pageSize?.toString())
-    }
-
-
-
-    return this.http.get<Property[]>(this.baseUrl + "property", {observe:'response', params}).pipe(map(response=>{
-      this.paginatedResult.result = response.body;
-      if(response.headers.get("Pagination") !==null){
-        this.paginatedResult.pagination= JSON.parse(response.headers.get("Pagination"))
-      }
-      return this.paginatedResult;
-    }))
+  getProperties(userParams :UserParams){
+    let params= this.getPaginationHeaders(userParams)
+    return this.getPaginetedResult<Property[]>(this.baseUrl + "property",params)
   }
+
+  private getPaginetedResult<T>(url, params) {
+    const paginatedResult:PaginatedResult<T>= new PaginatedResult<T>();
+    return this.http.get<T>(url,{ observe: 'response', params }).pipe(map(response => {
+      paginatedResult.result = response.body;
+      if (response.headers.get("Pagination") !== null) {
+        paginatedResult.pagination = JSON.parse(response.headers.get("Pagination"));
+      }
+      return paginatedResult;
+    }));
+  }
+
+  private getPaginationHeaders(userParams:UserParams){
+    let params= new HttpParams();   
+     params= params.append("pageNumber", userParams?.pageNumber?.toString());
+     params=params.append("pageSize", userParams?.pageSize?.toString())
+     if(userParams?.country!==null){
+      params= params.append("country", userParams?.country?.toString())
+    }
+    if(userParams?.city!==null){
+      params= params.append("city", userParams?.city?.toString())
+    }
+    if(userParams?.minimumPrice!==null){
+      params= params.append("minimumPrice", userParams?.minimumPrice?.toString())
+    }
+    if(userParams?.maximumPrice!==null){
+      params= params.append("maximumPrice", userParams?.maximumPrice?.toString())
+    }
+    if(userParams?.minimumSize!==null){
+      params= params.append("minimumSize", userParams?.minimumSize?.toString())
+    }
+    if(userParams?.maximumSize!==null){
+      params= params.append("maximumSize", userParams?.maximumSize?.toString())
+    }
+    if(userParams?.propertyStatus!==null){
+      params= params.append("propertyStatus", userParams?.propertyStatus?.toString())
+    }
+    if(userParams?.marketType!==null){
+      params= params.append("marketType", userParams?.marketType?.toString())
+    }
+    if(userParams?.propertyType!==null){
+      params= params.append("propertyType", userParams?.propertyType?.toString())
+    }
+    if(userParams?.sortBy==="min"){
+      params= params.append("sortBy", "Price")
+      params= params.append("sortOrder", "Ascending")
+    }
+    if(userParams?.sortBy==="max"){
+      params= params.append("sortBy", "Price")
+      params= params.append("sortOrder", "Descending")
+    }
+    if(userParams?.sortBy==="new"){
+      params= params.append("sortBy", "Date")
+      params= params.append("sortOrder", "Descending")
+    }
+    if(userParams?.sortBy==="old"){
+      params= params.append("sortBy", "Date")
+      params= params.append("sortOrder", "Ascending")
+    }
+     return params;
+    
+  }
+
+
+
 
   getProperty(id:string){
     return  this.http.get<PropertyDetails>(this.baseUrl + "property/"+ id)

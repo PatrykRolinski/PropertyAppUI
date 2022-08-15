@@ -23,7 +23,11 @@ import { UserRegisterComponent } from './users/user-register/user-register/user-
 import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
 import {MatButtonModule} from '@angular/material/button'
-import {MatPaginatorModule} from '@angular/material/paginator'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -54,8 +58,11 @@ import {MatPaginatorModule} from '@angular/material/paginator'
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatPaginatorModule
-    
+    MatPaginatorModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],

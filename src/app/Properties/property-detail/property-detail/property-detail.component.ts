@@ -21,4 +21,5 @@ property:PropertyDetails;
       this.property=resposne;
     })
   }
+  pictNotLoading(event) { event.target.src = "../../../../assets/defaultimage.jpg" }
 }

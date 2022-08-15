@@ -1,19 +1,78 @@
-<div style="width: 70%; padding-bottom:2rem; padding-top: 2rem; margin: auto;">
+<div style="width: 60%; padding-bottom:2rem; padding-top: 2rem; margin: auto;">
+  <form class="paramsForm" #paramsForm="ngForm" (ngSubmit)="loadProperties()">
+      <div class="address">
+          <div  class="form-outline">
+              <label class="form-label" for="country">Country</label>
+              <input type="text" id="country" style="width: 100%;" [(ngModel)]="userParams.country" name="country" class="form-control" />
+            </div>
+            <div class="form-outline">
+                <label class="form-label" for="city">City</label>
+              <input type="text" id="city" style="width: 100%;" [(ngModel)]="userParams.city" name="city"  class="form-control" />
+            </div>            
+            <div class="form-outline">
+                <label class="form-label" for="minPrice">Min Price</label>
+              <input type="text" id="minPrice" style="width: 100px;" [(ngModel)]="userParams.minimumPrice" name="minimumPrice" class="form-control" />
+            </div>
+            <div class="form-outline">
+                <label class="form-label" for="maxPrice">Max Price</label>
+              <input type="text" id="maxPrice" style="width: 100px"  [(ngModel)]="userParams.maximumPrice" name="maximumPrice"  class="form-control" />
+            </div>
+      </div>
+      <div class="size">
+          <div class="form-outline">
+              <label class="form-label" for="minimum-size">Min Size</label>
+            <input type="text" id="minimum-size" style="width: 70px;"  [(ngModel)]="userParams.minimumSize" name="minimumSize" class="form-control" />
+          </div>
+          <div class="form-outline">
+              <label class="form-label" for="maximum-size">Max Size</label>
+            <input type="text" id="maximum-size" style="width: 70px;" [(ngModel)]="userParams.maximumSize" name="maximumSize"  class="form-control" />
+          </div>
+          <div class="center">           
+            <label for="propertytype">Property Type</label>
+            <select id="propertytype" [(ngModel)]="userParams.propertyType" name="propertyType" class="form-select">
+              <option *ngFor="let c of propertytypes" [ngValue]="c">{{ c }}</option>
+            </select>
+        </div>
+        <div class="center">
+            <label for="markettype">Market type</label>
+            <select id="markettype" [(ngModel)]="userParams.marketType" name="marketType" class="form-select" >
+              <option *ngFor="let c of marketTypes" [ngValue]="c">{{ c }}</option>
+            </select>
+           
+          </div>
+          <div class="center">
+            <label for="propertystatus">Status</label>
+            <select id="propertystatus" [(ngModel)]="userParams.propertyStatus" name="status" class="form-select">
+              <option *ngFor="let c of propertyStatus" [ngValue]="c">{{ c }}</option>
+            </select>          
+          </div>
+          <button type="submit" mat-raised-button color="foreground">Reset</button>
+          <button type="submit" mat-raised-button color="primary">Search</button>
+          
+      </div>
+      <hr>
+      <div class="sort-by">
+          <h2>We Found for You <span style="font-weight: bolder;">{{pagination?.totalItems || 0}} </span>properties!</h2>
+          <select [(ngModel)]="sortBy" name="sortBy" (input)="setSorting($event)" (click)="loadProperties()" class="form-select" aria-label="Default select example">
+            <option value="min">The cheapest</option>
+            <option value="max">The most expensive</option>
+            <option  selected="selected" value="new">Newest</option>
+            <option value="old">Oldest</option>
+          </select>
+      </div>
+          
     
-    <ul *ngFor="let property of properties">
-        <app-property-card [property]="property"></app-property-card>
-    </ul>
-    <div>
-    <mat-paginator [length]="pagination?.totalItems"
-        [pageIndex]="0"
-                  [pageSize]="pageSize"
-                  [pageSizeOptions]="[5, 10, 15]"
-                  aria-label="Select page"
-                  (page)="onPageChange($event)"
-                  >
+     
+  </form>
+
+
+  <ul *ngFor="let property of properties">
+    <app-property-card [property]="property"></app-property-card>
+  </ul>
+  <div>
+    <mat-paginator [length]="pagination?.totalItems" [pageIndex]="0" [pageSize]="userParams?.pageSize"
+      [pageSizeOptions]="[5, 10, 15]" aria-label="Select page" (page)="onPageChange($event)">
     </mat-paginator>
-    </div>
+  </div>
 
 </div>
-
-

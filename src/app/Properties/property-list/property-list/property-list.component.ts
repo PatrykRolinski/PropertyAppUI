@@ -3,6 +3,7 @@ import { Pagination } from 'src/app/_models/pagination';
 import { Property } from 'src/app/_models/property';
 import { PropertyService } from 'src/app/_services/property.service';
 import {PageEvent} from '@angular/material/paginator'
+import { UserParams } from 'src/app/_models/userParams';
 
 @Component({
   selector: 'app-property-list',
@@ -12,29 +13,37 @@ import {PageEvent} from '@angular/material/paginator'
 export class PropertyListComponent implements OnInit {
 properties:any;
 pagination:Pagination;
-pageNumber=1;
-pageSize=5;
+userParams:UserParams
+sortBy:string="new"
+
+marketTypes: string[] = ['Primary', 'Secondary'];
+propertyStatus: string[]= ["Sale", "Rent"]
+propertytypes:string[]=["Flat","House", "Garage","Castle"]
 
 
-
-
-  constructor(private propertyService:PropertyService) { }
+  constructor(private propertyService:PropertyService) {
+    this.userParams=new UserParams();
+   }
 
   ngOnInit(): void {
     this.loadProperties();
   }
 loadProperties(){
-this.propertyService.getProperties(this.pageNumber, this.pageSize).subscribe(response=> {
+  
+this.propertyService.getProperties(this.userParams).subscribe(response=> {
   this.properties = response.result;
   this.pagination=response.pagination;
 }  )
 }
 
 onPageChange(event :any){
-  console.log(event)
-  this.pageNumber=event.pageIndex+1;
-  this.pageSize=event.pageSize
+   this.userParams.pageNumber=event.pageIndex+1;
+  this.userParams.pageSize=event.pageSize
   this.loadProperties();
 }
+
+setSorting(event){
+  this.userParams.sortBy= event.target.value
+ } 
 
 }
