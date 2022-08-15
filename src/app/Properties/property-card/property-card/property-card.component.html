@@ -1,4 +1,4 @@
-<article>
+<!-- <article>
     <div class="main"
     [ngClass]="{'rent':property.propertyStatus==='Rent'}">
         <img src="{{property.mainPhotoUrl}}" alt="picture of property">
@@ -31,14 +31,7 @@
                 <p class="sub-feature-text">  Status: for {{property.propertyStatus | uppercase}}</p>
             </div>
             <button type="button" class="btn btn-success" routerLink="/property/{{property.id}}/details">More details</button>
-            <!-- <div class="sub-feature">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">                    
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                        </svg> 
-                </div>
-                <p>{{property.country}}</p> 
-             </div> -->
+            
         </div>
           
           
@@ -47,6 +40,29 @@
        
 
   
-</article>
+</article> -->
 
 
+<div class="card mb-3 main" [ngClass]="{'rent':property.propertyStatus==='Rent'}" style="width: 100%; max-width: 50rem;">
+    <div class="row g-0" style="justify-content: space-between;">
+      <div class="col-md-7">
+        <img src="{{property.mainPhotoUrl}}"  (error)="pictNotLoading($event)" alt="picture of property" style="height: 100%; width: auto; object-fit:cover ;"  class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-5">
+        <div class="card-body">         
+         <p class="card-text"> <mat-icon>flag</mat-icon> <span class="address"> {{property.country}} </span></p>
+          
+         <p class="card-text"><mat-icon>map</mat-icon><span class="address"> {{property.city}}</span>  </p>        
+         
+                
+               
+          <p class="card-text"> <mat-icon> aspect_ratio</mat-icon><span> Property size: {{property.propertySize}} m2</span></p>     
+          <p class="card-text"> <mat-icon> euro</mat-icon><span> Price: {{property.price}} pln</span> </p>
+          <p class="card-text"><mat-icon>home</mat-icon><span> Property type:  {{property.propertyType}}</span> </p>
+          <p class="card-text"><mat-icon> key</mat-icon><span> Status: for {{property.propertyStatus | uppercase}}</span>  </p>
+          <button type="button" class="btn btn-success" routerLink="/property/{{property.id}}/details">More details</button>          
+        </div>
+        
+      </div>
+    </div>
+  </div>

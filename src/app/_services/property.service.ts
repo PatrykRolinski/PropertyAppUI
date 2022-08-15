@@ -1,6 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { AnimateTimings } from '@angular/animations';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { PaginatedResult } from '../_models/pagination';
+import { Property } from '../_models/property';
 import { PropertyDetails } from '../_models/propertydetails';
 
 @Injectable({
@@ -8,10 +12,28 @@ import { PropertyDetails } from '../_models/propertydetails';
 })
 export class PropertyService {
 baseUrl= environment.apiUrl;
+property: Property[]= [];
+paginatedResult:PaginatedResult<Property[]>= new PaginatedResult<Property[]>();
   constructor(private http: HttpClient) { }
 
-  getProperties(){
-    return this.http.get(this.baseUrl + "property")
+  getProperties(pageNumber?:number, pageSize?:number){
+    let params= new HttpParams();
+
+    if(pageNumber!== null && pageSize!==null){
+
+     params= params.append("pageNumber", pageNumber?.toString());
+     params=params.append("pageSize", pageSize?.toString())
+    }
+
+
+
+    return this.http.get<Property[]>(this.baseUrl + "property", {observe:'response', params}).pipe(map(response=>{
+      this.paginatedResult.result = response.body;
+      if(response.headers.get("Pagination") !==null){
+        this.paginatedResult.pagination= JSON.parse(response.headers.get("Pagination"))
+      }
+      return this.paginatedResult;
+    }))
   }
 
   getProperty(id:string){

@@ -14,4 +14,5 @@ export class PropertyCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+pictNotLoading(event) { event.target.src = "../../../../assets/defaultimage.jpg" }
 }

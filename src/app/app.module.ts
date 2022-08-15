@@ -23,6 +23,7 @@ import { UserRegisterComponent } from './users/user-register/user-register/user-
 import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
 import {MatButtonModule} from '@angular/material/button'
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {MatButtonModule} from '@angular/material/button'
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule
     
   ],
   providers: [
