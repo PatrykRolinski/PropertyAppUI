@@ -60,7 +60,15 @@
           <p class="card-text"> <mat-icon> euro</mat-icon><span> Price: {{property.price}} pln</span> </p>
           <p class="card-text"><mat-icon>home</mat-icon><span> Property type:  {{property.propertyType}}</span> </p>
           <p class="card-text"><mat-icon> key</mat-icon><span> Status: for {{property.propertyStatus | uppercase}}</span>  </p>
-          <button type="button" class="btn btn-success" routerLink="/property/{{property.id}}/details">More details</button>          
+          <div class="buttons">
+              <button mat-button color="primary" style="font-size: 1.5rem;" routerLink="/property/{{property.id}}/details">Details</button>         
+              <button *ngIf="like===true" mat-fab color="warn" (click)="DeleteLike();DeleteClick()" >
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button *ngIf="like===false"  mat-fab color="basic" (click)="AddLike()">
+                <mat-icon>favorite</mat-icon>
+              </button>
+          </div>
         </div>
         
       </div>

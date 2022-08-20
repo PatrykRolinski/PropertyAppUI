@@ -28,6 +28,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import {MatSelectModule} from '@angular/material/select';
+import { LikeListComponent } from './likes/like-list/like-list.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {MatSelectModule} from '@angular/material/select';
     PropertyEditComponent,
     UserRegisterComponent,
     UserAfterRegisterComponent,
-    PhotoManagerComponent, 
+    PhotoManagerComponent,
+    LikeListComponent, 
     
   ],
   imports: [

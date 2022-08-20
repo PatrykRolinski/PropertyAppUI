@@ -45,5 +45,9 @@ onPageChange(event :any){
 setSorting(event){
   this.userParams.sortBy= event.target.value
  } 
+ resetFilter(){
+  this.userParams=new UserParams();
+   this.loadProperties();
+ }
 
 }
