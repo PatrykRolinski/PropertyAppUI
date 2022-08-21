@@ -1,0 +1,23 @@
+<div *ngFor="let message of messages">
+  <div *ngIf="message?.recipientId!==userId" class="container darker" >
+      <span class="name">{{message?.senderFirstName |  titlecase}}</span>
+      <p>{{message?.content}}</p>
+      <span class="time-right">11:00</span>
+    </div>
+
+    <div *ngIf="message?.recipientId===userId" class="container" >
+      <span class="name" style="margin-left: 90%;">{{message?.senderFirstName |  titlecase}}</span>
+      <p>{{message?.content}}</p>
+      <span class="time-right">11:00</span>
+    </div>
+
+    
+  </div>
+
+  <div *ngIf="clicked===true"> 
+    <textarea [(ngModel)]="messageContent.content" name="content" placeholder="Remember, be nice!" style="width: 100%;" rows="5"></textarea>    
+     
+      <button (click)="SendMessage()" style='float:right' mat-raised-button color="primary">Send</button>
+  </div>
+
+  

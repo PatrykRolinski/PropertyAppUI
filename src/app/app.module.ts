@@ -29,6 +29,11 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import {MatSelectModule} from '@angular/material/select';
 import { LikeListComponent } from './likes/like-list/like-list.component';
+import { MessagesComponent } from './messages/messages/messages.component';
+import { MessageThreadComponent } from './messages/message-thread/message-thread.component';
+import { MessageContainerComponent } from './messages/message-container/message-container.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MessageComponent } from './messages/message/message.component'
 
 
 @NgModule({
@@ -47,7 +52,11 @@ import { LikeListComponent } from './likes/like-list/like-list.component';
     UserRegisterComponent,
     UserAfterRegisterComponent,
     PhotoManagerComponent,
-    LikeListComponent, 
+    LikeListComponent,
+    MessagesComponent,
+    MessageThreadComponent,
+    MessageContainerComponent,
+    MessageComponent, 
     
   ],
   imports: [
@@ -64,7 +73,8 @@ import { LikeListComponent } from './likes/like-list/like-list.component';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],

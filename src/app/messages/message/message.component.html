@@ -1,0 +1,17 @@
+
+  <div (click)="secondPersonId()" *ngFor="let message of message" class="container"  [ngClass]="{'darker' : message?.dateRead===null, 'lighter': readed===true}"  >
+    <img src="../../../../assets/defaultimage.jpg" alt="Avatar">
+     <p> <span style="font-weight: bold;">{{message?.senderFirstName}}</span> :{{message?.content}} ssdd</p>
+    <span class="time-right">{{message?.sendDate|  date:'medium'}}</span>
+  </div>  
+
+
+  "id": 0,
+  "content": "string",
+  "propertyId": 0,
+  "senderFirstName": "string",
+  "senderId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "reciepientFirstName": "string",
+  "recipientId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "sendDate": "2022-08-20T11:39:52.122Z",
+  "dateRead": "2022-08-20T11:39:52.122Z"
