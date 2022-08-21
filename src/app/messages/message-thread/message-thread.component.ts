@@ -6,6 +6,8 @@ import { Message } from 'src/app/_models/message';
 import { MessageService } from 'src/app/_services/message.service';
 import { SendMessage } from 'src/app/_models/helperMessage';
 import { Router } from '@angular/router';
+import { PropertyService } from 'src/app/_services/property.service';
+import { PropertyDetails } from 'src/app/_models/propertydetails';
 
 @Component({
   selector: 'app-message-thread',
@@ -13,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./message-thread.component.css']
 })
 export class MessageThreadComponent implements OnInit {
-
+property:PropertyDetails;
 currentUserToken:any
 userId:string
 messages:any;
@@ -26,7 +28,7 @@ messageContent:SendMessage= new SendMessage();
 
 
   constructor(private accountService:AccountService, 
-    private messageService:MessageService, private router:Router) {
+    private messageService:MessageService, private router:Router, private propertyService:PropertyService) {
       this.messageService.HelperMessage.subscribe((response=>{
         this.senderId=response?.senderId
         this.propertyId=response?.propertyId
@@ -36,7 +38,7 @@ messageContent:SendMessage= new SendMessage();
           this.secondPersonId=this.senderId===this.userId? this.reciepientId : this.senderId
           console.log(this.secondPersonId)
           this.LoadThread(this.secondPersonId, this.propertyId)        }
-       
+       this.GetProperty();
      }))}
 
   ngOnInit(): void {
@@ -71,5 +73,11 @@ messageContent:SendMessage= new SendMessage();
       complete: ()=> this.LoadThread(this.secondPersonId, this.propertyId)
     },)
     this.messageContent.content=""
+  }
+
+  GetProperty(){
+    this.propertyService.getProperty(this.propertyId.toString()).subscribe({
+      next:res=>  this.property=res
+    })
   }
   }

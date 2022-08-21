@@ -1,14 +1,10 @@
-
-
 <div>
-    <mat-tab-group animationDuration="0ms">
+    <mat-tab-group dynamicHeight [color]="'primary'" [backgroundColor]="'primary'" aimationDuration="0ms">
         <mat-tab label="InBox">
             <app-message [containter]="'Inbox'"></app-message>        
         </mat-tab>
         <mat-tab label="Output">
-            <app-message [containter]="'Output'"></app-message>
+            <app-output-component [containter]="'Output'"></app-output-component>            
         </mat-tab>        
     </mat-tab-group>
-
-
 </div>

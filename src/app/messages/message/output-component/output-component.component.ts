@@ -1,17 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { HelperMessage } from 'src/app/_models/helperMessage';
 import { Message } from 'src/app/_models/message';
 import { Pagination } from 'src/app/_models/pagination';
 import { MessageService } from 'src/app/_services/message.service';
 
-
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  selector: 'app-output-component',
+  templateUrl: './output-component.component.html',
+  styleUrls: ['./output-component.component.css']
 })
-export class MessageComponent implements OnInit {
+export class OutputComponentComponent implements OnInit {
+
   message:Message[];
   helperMessage:HelperMessage=new HelperMessage();
   readed:boolean=false
@@ -49,8 +48,6 @@ export class MessageComponent implements OnInit {
    this.pageSize=event.pageSize
    this.GetMessages()
  }
-
-
 
 
 }

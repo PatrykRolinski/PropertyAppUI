@@ -34,6 +34,9 @@ import { MessageThreadComponent } from './messages/message-thread/message-thread
 import { MessageContainerComponent } from './messages/message-container/message-container.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MessageComponent } from './messages/message/message.component'
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { OutputComponentComponent } from './messages/message/output-component/output-component.component';
+
 
 
 @NgModule({
@@ -56,7 +59,8 @@ import { MessageComponent } from './messages/message/message.component'
     MessagesComponent,
     MessageThreadComponent,
     MessageContainerComponent,
-    MessageComponent, 
+    MessageComponent,
+    OutputComponentComponent, 
     
   ],
   imports: [
@@ -74,7 +78,8 @@ import { MessageComponent } from './messages/message/message.component'
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    ScrollingModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],

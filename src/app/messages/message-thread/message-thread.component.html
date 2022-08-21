@@ -1,23 +1,71 @@
-<div *ngFor="let message of messages">
-  <div *ngIf="message?.recipientId!==userId" class="container darker" >
+<div *ngIf="propertyId" class="card mb-3" style="width: 100%; height: 22%; ">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{property?.mainPhotoUrl}}" class="rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div style="margin-top: 2rem;">
+        <div style="display: flex; gap: 20px;">
+          <div>
+            <div>
+              <p class="card-text">
+                <mat-icon>flag</mat-icon> <span class="address"> {{property?.country | titlecase}} </span>
+              </p>
+
+              <p class="card-text">
+                <mat-icon>map</mat-icon><span class="address"> {{property?.city | titlecase}}</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <p class="card-text">
+              <mat-icon> aspect_ratio</mat-icon><span> Property size: {{property?.propertySize}} m2</span>
+            </p>
+
+            <p class="card-text">
+              <mat-icon> euro</mat-icon><span> Price: {{property?.price}} pln</span>
+            </p>
+          </div>
+
+          <div>
+  
+            <p class="card-text">
+              <mat-icon>home</mat-icon><span> Property type: {{property?.propertyType}}</span>
+            </p>
+            <p class="card-text">
+              <mat-icon> key</mat-icon><span> Status: for {{property?.propertyStatus | uppercase}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+
+  <div *cdkVirtualFor="let message of messages">
+    <div *ngIf="message?.recipientId!==userId" class="container darker">
       <span class="name">{{message?.senderFirstName |  titlecase}}</span>
       <p>{{message?.content}}</p>
       <span class="time-right">11:00</span>
     </div>
 
-    <div *ngIf="message?.recipientId===userId" class="container" >
+    <div *ngIf="message?.recipientId===userId" class="container">
       <span class="name" style="margin-left: 90%;">{{message?.senderFirstName |  titlecase}}</span>
       <p>{{message?.content}}</p>
       <span class="time-right">11:00</span>
     </div>
 
-    
   </div>
+</cdk-virtual-scroll-viewport>
 
-  <div *ngIf="clicked===true"> 
-    <textarea [(ngModel)]="messageContent.content" name="content" placeholder="Remember, be nice!" style="width: 100%;" rows="5"></textarea>    
-     
-      <button (click)="SendMessage()" style='float:right' mat-raised-button color="primary">Send</button>
-  </div>
 
-  
+
+
+<div *ngIf="clicked===true">
+  <textarea [(ngModel)]="messageContent.content" name="content" placeholder="Remember, be nice!" style="width: 97%;"
+    rows="5"></textarea>
+
+  <button (click)="SendMessage()" mat-raised-button color="primary">Send</button>
+</div>
