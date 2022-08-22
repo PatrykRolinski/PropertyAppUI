@@ -37,31 +37,31 @@ property: Property[]= [];
     let params= new HttpParams();   
      params= params.append("pageNumber", userParams?.pageNumber?.toString());
      params=params.append("pageSize", userParams?.pageSize?.toString())
-     if(userParams?.country!==null){
+     if(userParams?.country!==null &&  userParams?.country?.toString()!== ""){
       params= params.append("country", userParams?.country?.toString())
     }
-    if(userParams?.city!==null){
+    if(userParams?.city!==null  &&  userParams?.city?.toString()!== ""){
       params= params.append("city", userParams?.city?.toString())
     }
-    if(userParams?.minimumPrice!==null){
-      params= params.append("minimumPrice", userParams?.minimumPrice?.toString())
+    if(userParams?.minimumPrice!==null  &&  userParams?.minimumPrice?.toString()!== ""){
+      params= params.append("minimumPrice", userParams?.minimumPrice?.toString())  
     }
-    if(userParams?.maximumPrice!==null){
+    if(userParams?.maximumPrice!==null && userParams?.maximumPrice.toString()!== ""){
       params= params.append("maximumPrice", userParams?.maximumPrice?.toString())
     }
-    if(userParams?.minimumSize!==null){
+    if(userParams?.minimumSize!==null  &&  userParams?.minimumSize?.toString()!== ""){
       params= params.append("minimumSize", userParams?.minimumSize?.toString())
     }
-    if(userParams?.maximumSize!==null){
+    if(userParams?.maximumSize!==null && userParams?.maximumSize?.toString()!== ""){
       params= params.append("maximumSize", userParams?.maximumSize?.toString())
     }
-    if(userParams?.propertyStatus!==null){
+    if(userParams?.propertyStatus!==null && userParams?.propertyStatus?.toString()!== ""){
       params= params.append("propertyStatus", userParams?.propertyStatus?.toString())
     }
-    if(userParams?.marketType!==null){
+    if(userParams?.marketType!==null && userParams?.marketType?.toString()!== ""){
       params= params.append("marketType", userParams?.marketType?.toString())
     }
-    if(userParams?.propertyType!==null){
+    if(userParams?.propertyType!==null && userParams?.marketType?.toString()!== ""){
       params= params.append("propertyType", userParams?.propertyType?.toString())
     }
     if(userParams?.sortBy==="min"){
@@ -80,6 +80,9 @@ property: Property[]= [];
       params= params.append("sortBy", "Date")
       params= params.append("sortOrder", "Ascending")
     }
+
+console.log(params)
+    
      return params;
     
   }
