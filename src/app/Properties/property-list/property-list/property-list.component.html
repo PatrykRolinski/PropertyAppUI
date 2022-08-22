@@ -46,7 +46,7 @@
               <option *ngFor="let c of propertyStatus" [ngValue]="c">{{ c }}</option>
             </select>          
           </div>
-          <button type="submit" mat-raised-button color="foreground">Reset</button>
+          <button (click)="resetFilter()" type="submit" mat-raised-button color="foreground">Reset</button>
           <button type="submit" mat-raised-button color="primary">Search</button>
           
       </div>
