@@ -6,12 +6,11 @@
     margin-bottom: 5rem;
     max-width: 80%;
     background: linear-gradient(90deg, hsla(227, 100%, 84%, 1) 0%, hsla(317, 29%, 42%, 1) 100%);
-    display: flex;
-    justify-content: space-between;
+    
 }
 
 .carousel { 
-    margin-top: 10%;
+    margin-top: 5%;
     margin-right: 5%;
     
 }
@@ -42,8 +41,18 @@ text-align: left;
     text-align: justify;
 }
 #key-features{
-    margin-left: 2rem;
+    margin-left: 3rem;
     display: grid;
     grid-template-columns: 1f 1fr;
+    color: rgb(54, 50, 50);
+    font-weight: 400;
+   justify-self: end; 
    
+}
+
+
+
+#key-features h3{
+    
+    padding-top: 1rem;
 }

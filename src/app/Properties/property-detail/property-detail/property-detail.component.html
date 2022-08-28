@@ -2,63 +2,74 @@
   <div class="my-3 py-3">
     <h2 class="display-5">Property details</h2>
   </div>
-  <div id="main-component" style="width: 80%; height: 700px; border-radius: 21px 21px 0 0;">
-
-    <div>
-      <div id="description">
-        <h2>Description </h2>
-        <p>{{property?.description}}</p>
+  <div>
+    <div id="main-component" style="width: 80%; height: auto; padding-bottom: 5rem; border-radius: 21px 21px 0 0;">
+      <div>
+        <div class="mb-3" style="display: flex;align-items: baseline; justify-content: space-around; flex-wrap: wrap;">
+          <div class="mt-2 ms-5" style="font-family: 'Rubik Mono One'; color: black; text-align: justify;">
+            <p>Property status: {{property?.propertyStatus}}<p>
+                <p>Price: {{property?.price}}$<p>
+          </div>
+          <div id="key-features">
+            <h3>Key features</h3>
+            <div class="features" style="display: grid; grid-template-columns: 1fr 1fr;justify-self: center;">
+              <p style="white-space: nowrap">
+                <mat-icon>house</mat-icon>Property type: {{property?.propertyType}}
+              </p>
+              <p style="white-space: nowrap">
+                <mat-icon>bed</mat-icon>Number of rooms: {{property?.numberOfRooms}}
+              </p>
+              <p style="white-space: nowrap">
+                <mat-icon>kitchen</mat-icon>Closed kitchen: {{property?.closedKitchen===false? "Yes":"No"}}
+              </p>
+              <p>
+                <mat-icon>layers</mat-icon>Floor: {{property?.floor}}
+              </p>
+              <p>
+                <mat-icon>aspect_ratio</mat-icon>Property size: {{property?.propertySize}}
+              </p>
+              <p style="white-space: nowrap">
+                <mat-icon>layers</mat-icon>Market type: {{property?.marketType}}
+              </p>
+            </div>
+          </div>
+          <div id="key-features">
+            <h3>Address</h3>
+            <div class="features" style="display: grid; grid-template-columns: 1fr 1fr; justify-self: center;">
+              <p class="white-space: nowrap">
+                <mat-icon>flag</mat-icon> <span class="address">Country: {{property?.country | titlecase}} </span>
+              </p>
+  
+              <p class="card-text">
+                <mat-icon>map</mat-icon><span class="address">City: {{property?.city | titlecase}}</span>
+              </p>
+              <p class="card-text">
+                <mat-icon>add_road</mat-icon><span class="address">Street: {{property?.street | titlecase}}</span>
+              </p>
+            </div>
+          </div>
+          
+        </div>
+       
+        
+        <gallery style="border-radius: 5px;" [items]="images" [thumb]="false" thumbPosition="left"></gallery>
+        <div id="description">
+          <h2>Description </h2>
+          <p>{{property?.description}}</p>
+        </div>
+        <div *ngIf="clicked===true">
+          <p *ngIf="clicked===true" style="margin-top: 8px;">Send Message to our Manager</p>
+          <textarea [(ngModel)]="messageContent.content" placeholder="Be nice!" name="message" id="" class="form-control"></textarea>
+          <button (click)="SendMessage()" mat-raised-button color="primary">Send</button>
+  
+        </div>
+        <div *ngIf="clicked===false">
+          <h2>Thank you for message</h2>
+        </div>
       </div>
-      <div id="key-features">
-        <h3>Key features</h3>         
-        <div class="features" style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem;">
-          <p style="white-space: nowrap"><mat-icon>house</mat-icon>Property type:  {{property?.propertyType}}</p>
-          <p style="white-space: nowrap"><mat-icon>bed</mat-icon>Number of rooms:  {{property?.numberOfRooms}}</p>
-          <p style="white-space: nowrap"><mat-icon>kitchen</mat-icon>Closed kitchen:  {{property?.closedKitchen===false? "Yes":"No"}}</p>
-          <p><mat-icon>layers</mat-icon>Floor:  {{property?.floor}}</p>  
-          <p><mat-icon>aspect_ratio</mat-icon>Property size:  {{property?.propertySize}}</p>  
-          <p style="white-space: nowrap"><mat-icon>layers</mat-icon>Market type: {{property?.marketType}}</p>  
-        </div>       
-      </div>
-      <div class="mt-5" style="font-family: 'Rubik Mono One'; color: black; text-align: right;">
-        <p>Property status: {{property?.propertyStatus}}<p>
-        <p>Price: {{property?.price}}$<p>
-      </div>
-      
-      
-    </div>
-    <div>
-      <!-- <img src="{{property.mainPhotoUrl}}"> -->
-      <div id="carouselExampleControls" class="carousel carousel-fade" data-bs-ride="false">
-        <div class="carousel-inner">
-            <ul *ngFor="let propertyImage of property?.photos;let i=index; first as isFirst" style="list-style: none;">
-                <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
-                    <li><img src={{propertyImage?.url}}  (error)="pictNotLoading($event)" class="d-block w-100 carousel-pic" alt="..."></li>
-                </div>                                     
-            </ul>       
-                    
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>  
-
-
-
-
-
-
-
     </div>
   </div>
 
-
-
-
-
-
-</div>
+    
+   
+   

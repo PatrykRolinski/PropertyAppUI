@@ -13,7 +13,7 @@ export class PropertyCardComponent implements OnInit {
 @Input() property:Property;
 
   constructor(private likeService:LikeService) { }
-like :boolean
+like :boolean=false;
 
   ngOnInit(): void {
     this.GetLike();

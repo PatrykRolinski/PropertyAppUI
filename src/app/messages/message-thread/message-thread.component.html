@@ -48,13 +48,13 @@
     <div *ngIf="message?.recipientId!==userId" class="container darker">
       <span class="name">{{message?.senderFirstName |  titlecase}}</span>
       <p>{{message?.content}}</p>
-      <span class="time-right">11:00</span>
+      <span class="time-right">{{message.sendDate | date: 'short' : '+4' }}</span>
     </div>
 
     <div *ngIf="message?.recipientId===userId" class="container">
       <span class="name" style="margin-left: 90%;">{{message?.senderFirstName |  titlecase}}</span>
       <p>{{message?.content}}</p>
-      <span class="time-right">11:00</span>
+      <span class="time-right">{{message.sendDate | date: 'short' : '+4' }}</span>
     </div>
 
   </div>

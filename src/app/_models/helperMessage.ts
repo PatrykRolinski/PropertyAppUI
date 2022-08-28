@@ -9,5 +9,5 @@ export class HelperMessage{
 export class SendMessage{
     recipientId:string
     content:string
-    propertyId: number
+    propertyId: any
 }

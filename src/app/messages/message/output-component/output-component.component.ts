@@ -28,8 +28,7 @@ export class OutputComponentComponent implements OnInit {
   GetMessages(){
     this.messageService.loadMessages(this.containter, this.PageNumber, this.pageSize).subscribe(res=>{
       this.message=res.result
-      this.pagination=res.pagination;
-      console.log(this.message)
+      this.pagination=res.pagination;      
     })
   }
   secondPersonId(){ 

@@ -36,6 +36,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MessageComponent } from './messages/message/message.component'
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { OutputComponentComponent } from './messages/message/output-component/output-component.component';
+import { GalleryModule } from  'ng-gallery';
 
 
 
@@ -79,7 +80,8 @@ import { OutputComponentComponent } from './messages/message/output-component/ou
     MatInputModule,
     MatSelectModule,
     MatTabsModule,
-    ScrollingModule
+    ScrollingModule,
+    GalleryModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],

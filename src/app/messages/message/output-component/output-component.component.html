@@ -6,7 +6,7 @@
   <div class="test">
     <div  (click)="secondPersonId()" *ngFor="let message of message" class="container"  [ngClass]="{'darker' : (message?.dateRead===null && container==='Inbox'), 'lighter': readed===true}"  >
       <img src="../../../../assets/defaultimage.jpg" alt="Avatar">
-      <p style="padding-bottom:0.4rem;"><span style="font-weight: bold; word-wrap: break-word;">{{message?.senderFirstName | titlecase}}: </span> <span class="time-right">{{message?.sendDate|  date:'medium'}}</span></p> 
+      <p style="padding-bottom:0.4rem;"><span style="font-weight: bold; word-wrap: break-word;">{{message?.senderFirstName | titlecase}}: </span> <span class="time-right">{{message?.sendDate|  date:'medium'  : '+4' }}</span></p> 
          <span style="height: 2rem;">{{message?.content}}</span>    
     </div>  
   </div>

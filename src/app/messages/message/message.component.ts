@@ -30,7 +30,6 @@ export class MessageComponent implements OnInit {
     this.messageService.loadMessages(this.containter, this.PageNumber, this.pageSize).subscribe(res=>{
       this.message=res.result
       this.pagination=res.pagination;
-      console.log(this.message)
     })
   }
   secondPersonId(){ 

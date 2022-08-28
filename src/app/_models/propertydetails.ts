@@ -13,6 +13,7 @@ export interface PropertyDetails{
   street: string,
   floor: number,
   mainPhotoUrl: string,
+  createdById:any,
   photos: [
     {
       id: number,
