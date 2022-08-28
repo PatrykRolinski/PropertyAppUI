@@ -36,7 +36,7 @@ messageContent:SendMessage= new SendMessage();
         this.reciepientId=response.reciepientId
         if(this.senderId){
           this.secondPersonId=this.senderId===this.userId? this.reciepientId : this.senderId
-          console.log(this.secondPersonId)
+          console.log(this.propertyId)
           this.LoadThread(this.secondPersonId, this.propertyId)        }
        this.GetProperty();
      }))}

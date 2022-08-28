@@ -31,12 +31,13 @@ export class OutputComponentComponent implements OnInit {
       this.pagination=res.pagination;      
     })
   }
-  secondPersonId(){ 
-    this.helperMessage.senderId=this.message[0].senderId
-    this.helperMessage.propertyId=this.message[0].propertyId
+  secondPersonId(propertyId, senderId, reciepientId){ 
+    console.log(senderId, reciepientId)
+    this.helperMessage.senderId=reciepientId
+    this.helperMessage.propertyId=propertyId;
     this.helperMessage.clicked=true  
     this.readed=true
-    this.helperMessage.reciepientId=this.message[0].recipientId
+    this.helperMessage.reciepientId=reciepientId
     this.messageService.HelperMessage.next(this.helperMessage)
    
   }

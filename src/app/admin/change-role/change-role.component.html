@@ -1,0 +1,55 @@
+<div style="margin-left: 15%;">
+    <mat-form-field class="example-full-width" appearance="standard">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter()" [(ngModel)]="searchPhrase" placeholder="Search by email" #input>
+      </mat-form-field>
+    
+    <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+         <!-- Email Column -->
+         <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+      
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+      
+        <!-- First Name Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+      
+        <!-- Role Column -->
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef> Role </th>
+          <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+          mat-row
+          (click)="openDialog(row)"
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+      </table>
+      <mat-paginator [length]="pagination?.totalItems"[pageIndex]="0" [pageSize]="pageSize" class="example-full-width"
+      [pageSizeOptions]="[50, 100, 150]"
+      (page)="onPageChange($event)"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+</mat-paginator>
+</div>

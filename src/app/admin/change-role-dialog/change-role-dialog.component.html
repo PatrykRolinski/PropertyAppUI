@@ -1,0 +1,14 @@
+<form #form="ngForm"  (ngSubmit)="onSubmit()" action="">
+  <label id="example-radio-group-label">Pick role for user: {{userEmail}}</label>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="role"
+    name="role">
+    <mat-radio-button  class="example-radio-button" *ngFor="let role of roles" [value]="role">
+      {{role}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <button type="submit" (click)="close()" mat-raised-button color="primary">ChangeRole</button>
+  <button type="button" (click)="close()" mat-raised-button color="warn">Cancel</button>
+</form>

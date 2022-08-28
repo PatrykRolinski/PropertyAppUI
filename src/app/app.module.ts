@@ -37,6 +37,11 @@ import { MessageComponent } from './messages/message/message.component'
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { OutputComponentComponent } from './messages/message/output-component/output-component.component';
 import { GalleryModule } from  'ng-gallery';
+import { ChangeRoleComponent } from './admin/change-role/change-role.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import { ChangeRoleDialogComponent } from './admin/change-role-dialog/change-role-dialog.component';
 
 
 
@@ -61,7 +66,9 @@ import { GalleryModule } from  'ng-gallery';
     MessageThreadComponent,
     MessageContainerComponent,
     MessageComponent,
-    OutputComponentComponent, 
+    OutputComponentComponent,
+    ChangeRoleComponent,
+    ChangeRoleDialogComponent, 
     
   ],
   imports: [
@@ -81,7 +88,11 @@ import { GalleryModule } from  'ng-gallery';
     MatSelectModule,
     MatTabsModule,
     ScrollingModule,
-    GalleryModule
+    GalleryModule,
+    MatTableModule,
+    MatDialogModule,
+    MatRadioModule
+
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true }],

@@ -1,0 +1,12 @@
+table {
+    width: 80%;
+  }
+
+  .example-full-width {
+    width: 80%;
+  }
+
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+    background-color: aqua;
+  }

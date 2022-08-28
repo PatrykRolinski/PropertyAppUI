@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChangeRoleComponent } from './admin/change-role/change-role.component';
 import { LikeListComponent } from './likes/like-list/like-list.component';
 import { MessagesComponent } from './messages/messages/messages.component';
 import { PhotoManagerComponent } from './photos/photo-manager/photo-manager.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
 {path:"account/register", component:UserRegisterComponent},
 {path: "property/:id/photo-manager", component: PhotoManagerComponent},
 {path: "user/likes", component:LikeListComponent},
-{path: "user/messages", component:MessagesComponent}
+{path: "user/messages", component:MessagesComponent},
+{path: "admin/change-role", component:ChangeRoleComponent}
 
 ];
 

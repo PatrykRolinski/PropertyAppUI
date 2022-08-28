@@ -12,4 +12,8 @@ export class UserService {
   GetUserProperties(){
     return this.http.get(this.baseUrl + "User/created-properties")
   }
+
+  GetUser(id:any){
+    return this.http.get(this.baseUrl + "User/" +id)
+  }
 }
