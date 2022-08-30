@@ -53,7 +53,7 @@
       <hr>
       <div class="sort-by">
           <h2>We Found for You <span style="font-weight: bolder;">{{pagination?.totalItems || 0}} </span>properties!</h2>
-          <select [(ngModel)]="sortBy" name="sortBy" (input)="setSorting($event)" (click)="loadProperties()" class="form-select" aria-label="Default select example">
+          <select [(ngModel)]="sortBy" name="sortBy" (input)="setSorting($event)" (change)="loadProperties()" class="form-select" aria-label="Default select example">
             <option value="min">The cheapest</option>
             <option value="max">The most expensive</option>
             <option  selected="selected" value="new">Newest</option>

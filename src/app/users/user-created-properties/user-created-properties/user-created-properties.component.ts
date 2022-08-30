@@ -27,7 +27,7 @@ this.propertyService.deleteProperty(id).subscribe({
 }
 )
 }
-
+pictNotLoading(event) { event.target.src = "../../../../assets/defaultimage.jpg" }
 reloadComponent() {
   this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   this.router.onSameUrlNavigation = 'reload';

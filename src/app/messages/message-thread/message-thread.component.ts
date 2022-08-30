@@ -36,7 +36,6 @@ messageContent:SendMessage= new SendMessage();
         this.reciepientId=response.reciepientId
         if(this.senderId){
           this.secondPersonId=this.senderId===this.userId? this.reciepientId : this.senderId
-          console.log(this.propertyId)
           this.LoadThread(this.secondPersonId, this.propertyId)        }
        this.GetProperty();
      }))}
@@ -80,4 +79,6 @@ messageContent:SendMessage= new SendMessage();
       next:res=>  this.property=res
     })
   }
+
+  pictNotLoading(event) { event.target.src = "../../../../assets/defaultimage.jpg" }
   }

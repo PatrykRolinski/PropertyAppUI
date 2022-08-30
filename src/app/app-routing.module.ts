@@ -10,7 +10,10 @@ import { PropertyEditComponent } from './Properties/property-edit/property-edit/
 import { PropertyListComponent } from './Properties/property-list/property-list/property-list.component';
 import { UserAfterRegisterComponent } from './users/user-after-register/user-after-register/user-after-register.component';
 import { UserCreatedPropertiesComponent } from './users/user-created-properties/user-created-properties/user-created-properties.component';
+import { UserForgotPasswordComponent } from './users/user-forgot-password/user-forgot-password.component';
+import { UserResetPasswordComponent } from './users/user-forgot-password/user-reset-password/user-reset-password.component';
 import { UserRegisterComponent } from './users/user-register/user-register/user-register.component';
+import { UserUpdateComponent } from './users/user-update/user-update.component';
 import { VerifytestComponent } from './users/user-verify/user-verify.component';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
@@ -27,7 +30,10 @@ const routes: Routes = [
 {path: "property/:id/photo-manager", component: PhotoManagerComponent},
 {path: "user/likes", component:LikeListComponent},
 {path: "user/messages", component:MessagesComponent},
-{path: "admin/change-role", component:ChangeRoleComponent}
+{path: "admin/change-role", component:ChangeRoleComponent},
+{path: "account/update", component:UserUpdateComponent},
+{path: "account/recover-password", component:UserForgotPasswordComponent},
+{path:"account/reset-password", component:UserResetPasswordComponent}
 
 ];
 

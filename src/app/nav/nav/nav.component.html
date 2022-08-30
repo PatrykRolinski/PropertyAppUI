@@ -14,29 +14,23 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/properties">FIND A PROPERTY</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="role==='Admin' || role==='Manager'" class="nav-item">
             <a class="nav-link active" aria-current="page"  routerLink="/property/create">CREATE A PROPERTY</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="role==='Admin' || role==='Manager' || role==='Member'" class="nav-item">
             <a class="nav-link active" aria-current="page" href="/user/messages">MESSAGES</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>            
       </ul>
       <ul class="navbar-nav me-5 mb-2 mb-md-0">
-        <li class="nav-item">
+        <li *ngIf="role==='Admin' || role==='Manager'" class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/user/properties">YOUR PROPERTIES</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="role==='Admin' || role==='Manager' || role==='Member'" class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/user/likes">FAVORITE</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/admin/change-role">Admin</a>
+        <li *ngIf="role==='Admin'" class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/admin/change-role">ADMIN</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">CONTACT US</a>
@@ -48,7 +42,8 @@
           <span class="visually-hidden">Toggle Dropdown</span>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" (click)="logOut()" href="#">Logout</a></li>          
+          <li><a class="dropdown-item"  routerLink="/account/update">Edit Profile</a></li>   
+          <li><a class="dropdown-item" (click)="logOut()" href="#">Logout</a></li>        
         </ul>
       </div>
 

@@ -2,7 +2,7 @@
   <h1 style="margin:1rem; white-space: nowrap; text-align:center;">Your properties</h1> 
   <div class="list">
     <div *ngFor="let property of properties" class="card">
-    <img width="300" height="300" src="{{property.mainPhotoUrl}}" class="card-img-top" alt="...">
+    <img width="300" height="300" src="{{property.mainPhotoUrl}}" (error)="pictNotLoading($event)" class="card-img-top" alt="...">
     <div class="card-body">
       <div style="display: flex; align-items: center; justify-content: space-between;">        
         <div>
@@ -21,7 +21,7 @@
       </button>      
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small *ngIf="property.lastModifiedDate!==null" class="text-muted">Last modified at :{{property.lastModifiedDate|  date:'medium'  : '+4' }}</small>
     </div>
   </div>
   </div> 

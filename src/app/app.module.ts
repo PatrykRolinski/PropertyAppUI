@@ -42,7 +42,13 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { ChangeRoleDialogComponent } from './admin/change-role-dialog/change-role-dialog.component';
-
+import { TimeagoModule } from 'ngx-timeago';
+import { UserUpdateComponent } from './users/user-update/user-update.component';
+import { UserUpdateDialogComponent } from './users/user-update/user-update-dialog/user-update-dialog.component';
+import { UserChangePasswordDialogComponent } from './users/user-update/user-change-password-dialog/user-change-password-dialog.component';
+import { UserForgotPasswordComponent } from './users/user-forgot-password/user-forgot-password.component';
+import { UserForgotPasswordDialogComponent } from './users/user-forgot-password/user-forgot-password-dialog/user-forgot-password-dialog.component';
+import { UserResetPasswordComponent } from './users/user-forgot-password/user-reset-password/user-reset-password.component';
 
 
 @NgModule({
@@ -68,7 +74,13 @@ import { ChangeRoleDialogComponent } from './admin/change-role-dialog/change-rol
     MessageComponent,
     OutputComponentComponent,
     ChangeRoleComponent,
-    ChangeRoleDialogComponent, 
+    ChangeRoleDialogComponent,
+    UserUpdateComponent,
+    UserUpdateDialogComponent,
+    UserChangePasswordDialogComponent,
+    UserForgotPasswordComponent,
+    UserForgotPasswordDialogComponent,
+    UserResetPasswordComponent, 
     
   ],
   imports: [
@@ -91,7 +103,8 @@ import { ChangeRoleDialogComponent } from './admin/change-role-dialog/change-rol
     GalleryModule,
     MatTableModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    TimeagoModule.forRoot()
 
   ],
   providers: [

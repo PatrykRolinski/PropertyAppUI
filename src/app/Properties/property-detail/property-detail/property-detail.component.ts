@@ -27,13 +27,17 @@ messageContent: SendMessage= new SendMessage();
     let id:string = this.route.snapshot.paramMap.get('id');
     this.propertyService.getProperty(id).subscribe(resposne=>{
       this.property=resposne;
+      console.log(this.property.floor)
       this.images = [
       ];
       for(let i=0; i<this.property.photos.length; i++){
         this.images.push(new ImageItem({ src: this.property.photos[i].url, thumb: '../../../../assets/defaultimage.jpg' }))
         
     }
-    })
+    
+    if(this.property.photos.length<1)
+    this.images.push(new ImageItem({ src: '../../../../assets/defaultimage.jpg', thumb: '../../../../assets/defaultimage.jpg' }))
+  })
   }
 SendMessage(){
   let id = this.route.snapshot.paramMap.get('id');

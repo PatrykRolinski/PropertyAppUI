@@ -81,7 +81,6 @@ property: Property[]= [];
       params= params.append("sortOrder", "Ascending")
     }
 
-console.log(params)
     
      return params;
     

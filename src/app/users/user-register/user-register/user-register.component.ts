@@ -34,17 +34,15 @@ this.registerForm.controls.password.valueChanges.subscribe(() => {
 })}
 
 register(){
-  console.log("gg")
   this.accountService.register(this.registerForm.value)
 }
 
 
 login(){
-  console.log("gg")
   this.accountService.login(this.loginForm.value).subscribe({
     next: response=> console.log(response),
     error: error=> console.log(error),
-    complete: ()=> this.router.navigateByUrl('/properties')
+    complete: ()=> window.location.reload()
   },)
 }
 

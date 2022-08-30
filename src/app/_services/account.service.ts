@@ -36,7 +36,9 @@ register(model:any){
   })
 }
 
-
+changePassword(model:any){
+  return this.http.put(this.baseUrl +"account/change-password", model);
+}
 
  setCurrentUser(User:any){
   this.currentUserSource.next(User)
@@ -48,4 +50,19 @@ logout(){
   this.currentUserSource.next(null)
   
  }
+
+forgotPassword(email){
+  let reqHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+ let model=Object.values(email)
+  return this.http.post(this.baseUrl + "account/forgot-password",JSON.stringify(model[0]) , {headers:reqHeaders})
+}
+
+
+resetPassword(token, model){
+  const headers = new HttpHeaders();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+  return this.http.post(this.baseUrl + "Account/reset-password?token="+ token, model);
+}
+
 }
