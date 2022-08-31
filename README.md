@@ -1,27 +1,38 @@
-# Client
+# PropertyAppUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0. Example of UI for PropertyApp.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Examples of functions
 
-## Build
+### Sign up /login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![image](https://user-images.githubusercontent.com/92991489/187620608-bdfa5480-9470-4d18-8007-2528941bd31c.png)
 
-## Running unit tests
+### Create Ads
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![image](https://user-images.githubusercontent.com/92991489/187617086-c9268e66-a37a-443c-b74a-5ee510af2521.png)
 
-## Running end-to-end tests
+### Like
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![image](https://user-images.githubusercontent.com/92991489/187618832-75d41097-07ee-4c9b-b469-bd77d72d596b.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Search
+
+![image](https://user-images.githubusercontent.com/92991489/187617712-d3a277eb-fee6-4c4a-81a5-a63aebd94314.png)
+
+### Change role
+
+![image](https://user-images.githubusercontent.com/92991489/187618492-5729a1bc-56ce-44ad-9976-ef80b16439fa.png)
+
+### Write Message
+
+![image](https://user-images.githubusercontent.com/92991489/187620313-9c175f10-c4d2-4433-9406-dae110100d79.png)
+
+
+
